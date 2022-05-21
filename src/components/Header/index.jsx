@@ -157,12 +157,6 @@ const Header = (props) => {
         seoImage={props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed.src && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed.src}
         lang={props.activeDocMeta.lang}
       />
-      {/* <Helmet>
-        {headerData.custom_scripts?.map((item, idx) => {
-          return parse(item.code)
-        })}
-      </Helmet> */}
-
       <header>
         <Navbar>
         <Grid>
