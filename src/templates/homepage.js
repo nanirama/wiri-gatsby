@@ -18,7 +18,6 @@ import { graphql } from "gatsby"
 const HomePage = (props) => {
 
   const { data } = props
-  console.log('props', pageContext)
   if (!data) return null
 
   
