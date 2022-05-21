@@ -14,7 +14,6 @@ const InterestArticles = ({ data, lang }) => {
             <h2>These could be also interesting</h2>
             <Row>
                 {data.map((item, index) => {
-                    console.log('iarticle single', item.interested_article.document)
                     return(
                         <Col lg={4} md={6} sm={12}><BlogItem key={index} data={item.interested_article.document} lang={lang} /></Col>
                       )  

@@ -7,7 +7,6 @@ import { PrismicRichText } from "@prismicio/react"
 import { Imggroup, Blogimg1, Blogitem } from "../Slices/styled"
 
 const TextImageSlice = ({ data }) => {
-    console.log('textImage slice data', data)
     return (
         <Row>
             <Col lg={12} md={12} sm={12}>

@@ -6,7 +6,6 @@ import { PrismicRichText } from "@prismicio/react"
 import { Blackquote, Quotesvg, Quotecnt } from "../Slices/styled"
 
 const BlackQuoteSlice = ({ data }) => {
-    console.log('BlackQuoteSlice', data)
     return (
         <Row>
             <Col lg={12} md={12} sm={12}>

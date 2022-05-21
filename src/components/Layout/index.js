@@ -16,7 +16,6 @@ const theme = createTheme({
 })
 
 const Layout = ( props ) => {
-  console.log("Layout", props)
   const childrenWithProps = React.Children.map(
     props.children,
     (child, index) => {
