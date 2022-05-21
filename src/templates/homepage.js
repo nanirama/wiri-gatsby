@@ -21,9 +21,11 @@ const HomePage = (props) => {
   console.log('props', pageContext)
   if (!data) return null
 
+  
+if(data && data.prismicHomepage && data.prismicHomepage.pageContext)
+{
   const pageContext = data.prismicHomepage
-
-  return (
+  return(
     <Layout activeDocMeta={pageContext}>
       <HomeHero />
       <MainBenefits/>
@@ -34,19 +36,12 @@ const HomePage = (props) => {
       <PricingTable/>
       <Faq/>
     </Layout>
-    
-    // <Layout activeDocMeta={pageContent}>
-    //   <Seo title="Home" />
-    //   <HomeHero />
-    //   <MainBenefits />
-    //   <AppScreenshots />
-    //   <WebsiteWidget />
-    //   <CallToAction />
-    //   <DashboardScreenshots />
-    //   <PricingTable />
-    //   <Faq />
-    // </Layout>
   )
+}
+else{
+  return ''
+}
+ 
 }
 
 
