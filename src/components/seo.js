@@ -71,7 +71,7 @@ function Seo({ description, lang, meta, title, seoImage, headerData }) {
         },
       ].concat(meta)}
     >
-       {headerData.custom_scripts?.map((item, idx) => {
+       {headerData && headerData.custom_scripts?.map((item, idx) => {
           return parse(item.code)
         })}
       </Helmet>
