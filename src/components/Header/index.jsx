@@ -14,9 +14,6 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 const Header = (props) => {
   const [open, setOpen] = useState(false)
 
-  //ReactDOMServer.renderToString(<Handler />)
-  //const helmet = Helmet.renderStatic()
-  console.log("props.activeDocMeta", props.activeDocMeta)
   const { allPrismicHeader, allPrismicNavigation } = useStaticQuery(graphql`
     query {
       allPrismicHeader {

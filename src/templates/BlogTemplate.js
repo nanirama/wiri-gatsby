@@ -24,13 +24,11 @@ import InterestArticles from "../components/Slices/InterestingArticles"
 
 const BlogTemplate = (props) => {
   const { data } = props
-  console.log("Page props", data)
 
   if (!data) return null
 
   const pageContent = data.prismicBlog
 
-  console.log('blogsiglepageContent', pageContent)
   //const page = pageContent.data || {}
 
   return (
@@ -50,7 +48,6 @@ const BlogTemplate = (props) => {
           {pageContent.data.body.map((item, index) => {
             const { slice_type, primary, items } = item
             {
-              console.log('Slice Types', slice_type)
               if (slice_type === 'text_block' && primary) {
                 return <TextSlice data={primary} />
               }

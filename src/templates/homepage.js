@@ -20,9 +20,6 @@ const HomePage = (props) => {
   const { data } = props
   if (!data) return null
 
-  
-if(data && data.prismicHomepage && data.prismicHomepage.pageContext)
-{
   const pageContext = data.prismicHomepage
   return(
     <Layout activeDocMeta={pageContext}>
@@ -36,10 +33,7 @@ if(data && data.prismicHomepage && data.prismicHomepage.pageContext)
       <Faq/>
     </Layout>
   )
-}
-else{
-  return ''
-}
+
  
 }
 

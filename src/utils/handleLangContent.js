@@ -19,7 +19,6 @@ exports.handleLangContent = (nodes, lang) => {
     return node.lang === prismicConfig.defaultLanguage
   })
 
-  console.log("handleLangContent", defaultLangContent, nodes)
   
   if (lang !== prismicConfig.defaultLanguage) {
 

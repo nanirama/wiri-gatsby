@@ -48,7 +48,6 @@ const FooterMenu = ({ lang, data, cols }) => {
   )}
 
 const Footer = (props) => {
-  console.log("Footer", props)
   const footer_menus = []
   const { allPrismicFooter, allPrismicNavigation } = useStaticQuery(graphql`
     query {

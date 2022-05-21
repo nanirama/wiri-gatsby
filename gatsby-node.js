@@ -15,11 +15,44 @@ exports.createPages = async ({ graphql, actions }) => {
   const { data } = await graphql(`
   query {
     Blogs : allPrismicBlog {
+      totalCount
       edges {
         node {
           id
-          uid   
-          lang       
+          uid
+          lang
+          data {
+            category1 {
+              blog_category {
+                id
+                document {
+                  ... on PrismicBlogCategory {
+                    id
+                    uid
+                    data {
+                      category_title {
+                        text
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    BlogCategories: allPrismicBlogCategory {
+      edges {
+        node {
+          id
+          lang
+          uid
+          data {
+            category_title {
+              text
+            }
+          }
         }
       }
     }
@@ -57,7 +90,6 @@ const basePath = DEFAULT_BLOG_BASE_PATH;
 const blogs = data.Blogs.edges;
 
 const postsPerPage = DEFAULT_BLOG_POSTS_PER_PAGE; 
-console.log('lang list', prismicConfig.langs)
 prismicConfig.langs.forEach((lang) => {   
   const pathPrefix = lang === prismicConfig.defaultLanguage ? `/${basePath}` : `/${lang.slice(0, 2)}/${basePath}`
   paginate({
@@ -83,9 +115,29 @@ blogs.forEach(({ node }) => {
       lang: node.lang,
       id:node.id
     },
-  })
+  })  
 })
 
+data.BlogCategories.edges.forEach(({ node }) => { 
+  let blogsWithCat = blogs.filter((blog)=>{
+    return blog.node.data.category1 && blog.node.data.category1.find((cat)=>{
+      return cat.blog_category &&  cat.blog_category.document && cat.blog_category.document.uid === node.uid && cat.blog_category.document.lang===node.lang
+    })
+  }) 
+  const categoryPath =  node.lang === prismicConfig.defaultLanguage ? `${basePath}/${node.uid}` : `/${node.lang.slice(0, 2)}/${basePath}/${node.uid}`
+  paginate({
+    createPage,
+    items: blogsWithCat,
+    itemsPerPage: postsPerPage,
+    pathPrefix: categoryPath,
+    component: path.resolve(__dirname, "src/templates/BlogListTemplate.js"),
+    context: {
+      basePath,
+      paginationPath: categoryPath,
+      lang: node.lang
+    },
+  });
+})
 data.HomePages.edges.forEach(({ node }) => {    
   createPage({
     path:
