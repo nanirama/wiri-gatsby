@@ -11,7 +11,6 @@ import Seo from "../components/seo"
 
 const PageTemplate = ({ data }) => {
   
-  //console.log("Page", data, components)
 
   if (!data) return null
 

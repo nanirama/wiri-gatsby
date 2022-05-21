@@ -9,7 +9,7 @@ const BlogListTemplate = (props) => {
 
   const { data, pageContext, path, location } = props
 
-  console.log('Page Url',pageContext)
+
 
   const {
     allPrismicBlog: { edges: blogsData },
@@ -21,7 +21,6 @@ const BlogListTemplate = (props) => {
 
   if (!blogs) return null;
 
-  console.log("Page", props)
 
   if (!data) return null
 
