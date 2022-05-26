@@ -7,15 +7,14 @@ import Pagination from '../components/Pagination';
 
 const BlogCatListTemplate = (props) => {
     const { data, pageContext, path, location } = props
-
+    if (!data) return null;
     const { allPrismicBlog, catList } = data
-  
+    if (!allPrismicBlog) return null;
     const { basePath, humanPageNumber, categories } = pageContext;
   
-    const blogs = allPrismicBlog.edges.map((blog) => blog.node);
-  
+    const blogs = allPrismicBlog.edges.map((blog) => blog.node);  
     if (!blogs) return null;  
-    if (!data) return null;
+    
     if(!data.prismicBlogCategory) return null;
     const activeDocMeta = data.prismicBlogCategory
     console.log('orginal blogs',blogs)
