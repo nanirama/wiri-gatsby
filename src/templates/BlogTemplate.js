@@ -30,7 +30,7 @@ const BlogTemplate = (props) => {
   const pageContent = data.prismicBlog
 
   //const page = pageContent.data || {}
-
+  console.log('cat list', pageContent.data.category1)
   return (
     <Layout activeDocMeta={pageContent}>
       <Blogwrapper>
@@ -42,7 +42,17 @@ const BlogTemplate = (props) => {
               <Blogimg>
                 <GatsbyImage image={getImage(pageContent.data.article_image)} alt={pageContent.data.title.text} />
               </Blogimg>
-              <BlogButton><Button>product updates</Button></BlogButton>
+              <BlogButton>
+                {pageContent.data.category1 && pageContent.data.category1.map((cat, index)=>{
+                  if(cat.blog_category.document.data.title.text)
+                  {
+                    return(
+                      <Button>{cat.blog_category.document.data.title.text}</Button>
+                    )
+                  }                  
+                })}
+                
+              </BlogButton>
             </Col>
           </Row>
           {pageContent.data.body.map((item) => {
@@ -93,6 +103,20 @@ export const query = graphql`
           }
           article_image {
             gatsbyImageData(layout: FULL_WIDTH)
+          }
+          category1 {
+            blog_category {
+              document {
+                ... on PrismicBlogCategory {
+                  id
+                  data {
+                    title {
+                      text
+                    }
+                  }
+                }
+              }
+            }
           }
           publish_date
           body {

@@ -7,28 +7,30 @@ import Pagination from '../components/Pagination';
 
 const BlogCatListTemplate = (props) => {
     const { data, pageContext, path, location } = props
-    if (!data) return null;
+
     const { allPrismicBlog, catList } = data
-    if (!allPrismicBlog) return null;
+  
     const { basePath, humanPageNumber, categories } = pageContext;
   
-    const blogs = allPrismicBlog.edges.map((blog) => blog.node);  
+    const blogs = allPrismicBlog.edges.map((blog) => blog.node);
+  
     if (!blogs) return null;  
-    
-    if(!data.prismicBlogCategory) return null;
+    if (!data) return null
     const activeDocMeta = data.prismicBlogCategory
     console.log('orginal blogs',blogs)
 
     let Featured_Article = blogs.length > 1 && blogs[0]
     let AllBlogs = blogs.length > 1 ? blogs.shift() : blogs
-    if(data.prismicBloglistingpage.data && data.prismicBloglistingpage.data.featured_article)
+    if(data.prismicBlogCategory.data.featured_article)
     {
-      const Featured_Article = data.prismicBloglistingpage.data.featured_article.document
-      AllBlogs = data.prismicBloglistingpage.data.featured_article && Featured_Article.id && blogs.filter((item)=>{
-        return item.id!==Featured_Article.id
-      })
+      const Featured_Article = data.prismicBlogCategory.data.featured_article.document 
+      if(Featured_Article && Featured_Article.id && data.prismicBlogCategory.data.featured_article){
+        AllBlogs = Featured_Article && Featured_Article.id && data.prismicBlogCategory.data.featured_article && blogs.filter((item)=>{
+          return item.id!==Featured_Article.id
+        })
+      }      
     }
-    
+   
   return (
     <Layout activeDocMeta={activeDocMeta}>
       <BlogIndex

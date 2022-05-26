@@ -20,8 +20,10 @@ export const BlogButton = styled.div`
 display:flex; text-align:center; align-items:center;justify-content: center; margin-bottom:25px;
 `
 export const Button = styled.div`
-padding:0 20px; background-color:#e6f8f3; font-weight:semibold; border-radius:5px; 
-border:0; color:#08b689; text-transform:capitalize; font-size:24px; line-height:41px; cursor:pointer; font-weight:700;
+border:0px;
+margin:0px 3px;
+padding:0 15px; background-color:#e6f8f3; font-weight:semibold; border-radius:5px; 
+ color:#08b689; text-transform:capitalize; font-size:20px; line-height:34px; cursor:pointer; font-weight:700;
 `
 export const Bloglist = styled.div`
 

@@ -162,21 +162,27 @@ data.BlogCategories.edges.forEach(({ node }) => {
       return cat.blog_category &&  cat.blog_category.document && cat.blog_category.document.uid === node.uid && cat.blog_category.document.lang===node.lang
     })
   }) 
-  //console.log('cat blogs', blogsWithCat)
-  const categoryPath =  node.lang === prismicConfig.defaultLanguage ? `${basePath}/${node.uid}` : `/${node.lang.slice(0, 2)}/${basePath}/${node.uid}`
-  paginate({
-    createPage,
-    items: blogsWithCat,
-    itemsPerPage: postsPerPage,
-    pathPrefix: categoryPath,
-    component: path.resolve(__dirname, "src/templates/BlogCatListTemplate.js"),
-    context: {
-      uid: node.uid,
-      basePath,
-      paginationPath: categoryPath,
-      lang: node.lang
-    },
-  });
+  
+  if(blogsWithCat.length>0){
+    console.log('cat lang',node.lang)
+    console.log('cat node.uid',node.uid)
+    console.log('cat blogs', blogsWithCat.length)
+    const categoryPath =  node.lang === prismicConfig.defaultLanguage ? `${basePath}/${node.uid}` : `/${node.lang.slice(0, 2)}/${basePath}/${node.uid}`
+    paginate({
+      createPage,
+      items: blogsWithCat,
+      itemsPerPage: postsPerPage,
+      pathPrefix: categoryPath,
+      component: path.resolve(__dirname, "src/templates/BlogCatListTemplate.js"),
+      context: {
+        uid: node.uid,
+        basePath,
+        paginationPath: categoryPath,
+        lang: node.lang
+      },
+    });
+  }
+  
 })
 data.HomePages.edges.forEach(({ node }) => {    
   createPage({
