@@ -24,10 +24,10 @@ const BlogListTemplate = (props) => {
   const activeDocMeta = data.prismicBloglistingpage
   let Featured_Article = blogs[0]
   let AllBlogs = blogs.shift()
-  if(data.prismicBloglistingpage.data.featured_article)
+  if(data.prismicBloglistingpage.data && data.prismicBloglistingpage.data.featured_article)
   {
     const Featured_Article = data.prismicBloglistingpage.data.featured_article.document
-    AllBlogs = data.prismicBloglistingpage.data.featured_article && blogs.filter((item)=>{
+    AllBlogs = data.prismicBloglistingpage.data.featured_article && Featured_Article.id && blogs.filter((item)=>{
       return item.id!==Featured_Article.id
     })
   }
