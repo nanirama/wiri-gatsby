@@ -45,7 +45,7 @@ const BlogTemplate = (props) => {
               <BlogButton><Button>product updates</Button></BlogButton>
             </Col>
           </Row>
-          {pageContent.data.body.map((item, index) => {
+          {pageContent.data.body.map((item) => {
             const { slice_type, primary, items } = item
             {
               if (slice_type === 'text_block' && primary) {
@@ -81,10 +81,10 @@ export const query = graphql`
         lang
         type
         alternate_languages {
-        id
-        type
-        lang
-        uid
+          id
+          type
+          lang
+          uid
         }
         data {
           title {

@@ -1,7 +1,6 @@
 import * as React from "react"
 import {  Row, Col } from 'react-flexbox-grid';
 import { graphql } from "gatsby"
-import { PrismicRichText } from "@prismicio/react"
 
 import { Blackquote, Quotesvg, Quotecnt } from "../Slices/styled"
 
@@ -28,7 +27,6 @@ fragment BlogPostDataBlockquote on PrismicBlogDataBodyBlockquote {
   primary {
     quote_text {
         text
-        raw
         html
     }
  }

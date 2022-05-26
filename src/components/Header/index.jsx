@@ -93,7 +93,7 @@ const Header = (props) => {
       }
     )
 
-    //console.log("handleLang", targetLangDoc)
+    console.log("handleLang", targetLangDoc)
 
     if(targetLangDoc.length > 0) {
       navigate(linkResolver(targetLangDoc[0]))
@@ -145,13 +145,14 @@ const Header = (props) => {
       {props.data.label}
     </components.Option>
   )
+  console.log('Page Props', props.activeDocMeta.data.body1[0].primary.meta_title)
   return (
     <>
       <Seo
         headerData={headerData}
         title={props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && props.activeDocMeta.data.body1[0].primary.meta_title && props.activeDocMeta.data.body1[0].primary.meta_title}
         description={props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && props.activeDocMeta.data.body1[0].primary.meta_description && props.activeDocMeta.data.body1[0].primary.meta_description}
-        seoImage={props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed.src && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed.src}
+        seoImage={props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && props.activeDocMeta.data.body1[0].primary.seo_meta_image && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed.src && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed.src}
         lang={props.activeDocMeta.lang}
       />
       <header>

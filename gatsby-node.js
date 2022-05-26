@@ -14,6 +14,27 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
   query {
+    Pages : allPrismicPage {
+      nodes {
+        id
+        lang
+        url
+        uid
+      }
+    }
+    Blog : allPrismicBloglistingpage {
+      edges {
+        node {
+          id
+          lang
+          data {
+            title {
+              text
+            }
+          }
+        }
+      }
+    }
     Blogs : allPrismicBlog {
       totalCount
       edges {
@@ -29,8 +50,9 @@ exports.createPages = async ({ graphql, actions }) => {
                   ... on PrismicBlogCategory {
                     id
                     uid
+                    lang
                     data {
-                      category_title {
+                      title {
                         text
                       }
                     }
@@ -49,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
           lang
           uid
           data {
-            category_title {
+            title {
               text
             }
           }
@@ -84,24 +106,40 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 `)
 const DEFAULT_BLOG_BASE_PATH = 'blog';
-const DEFAULT_BLOG_POSTS_PER_PAGE = 6;
+const DEFAULT_BLOG_POSTS_PER_PAGE = 8;
 
 const basePath = DEFAULT_BLOG_BASE_PATH;
 const blogs = data.Blogs.edges;
 
 const postsPerPage = DEFAULT_BLOG_POSTS_PER_PAGE; 
-prismicConfig.langs.forEach((lang) => {   
-  const pathPrefix = lang === prismicConfig.defaultLanguage ? `/${basePath}` : `/${lang.slice(0, 2)}/${basePath}`
+
+data.Pages.nodes.forEach(page => {
+  createPage({
+    path: page.url,
+    component: path.resolve(__dirname, "src/templates/page.js"),
+    context: {
+      lang: page.lang,
+      id: page.id,
+      url: page.url,
+    },
+  })
+})
+data.Blog.edges.map(({node})=>{
+  const blogWithLang = blogs.filter((b)=>{
+    return b.node.lang===node.lang
+  })
+  const pathPrefix = node.lang === prismicConfig.defaultLanguage ? `${basePath}` : `${node.lang.slice(0, 2)}/${basePath}`
   paginate({
     createPage,
-    items: blogs,
+    items: blogWithLang,
     itemsPerPage: postsPerPage,
     pathPrefix: pathPrefix,
     component: path.resolve(__dirname, "src/templates/BlogListTemplate.js"),
     context: {
+      id:node.id,
       basePath,
       paginationPath: pathPrefix,
-      lang: lang
+      lang: node.lang
     },
   });
 })
@@ -124,14 +162,16 @@ data.BlogCategories.edges.forEach(({ node }) => {
       return cat.blog_category &&  cat.blog_category.document && cat.blog_category.document.uid === node.uid && cat.blog_category.document.lang===node.lang
     })
   }) 
+  //console.log('cat blogs', blogsWithCat)
   const categoryPath =  node.lang === prismicConfig.defaultLanguage ? `${basePath}/${node.uid}` : `/${node.lang.slice(0, 2)}/${basePath}/${node.uid}`
   paginate({
     createPage,
     items: blogsWithCat,
     itemsPerPage: postsPerPage,
     pathPrefix: categoryPath,
-    component: path.resolve(__dirname, "src/templates/BlogListTemplate.js"),
+    component: path.resolve(__dirname, "src/templates/BlogCatListTemplate.js"),
     context: {
+      uid: node.uid,
       basePath,
       paginationPath: categoryPath,
       lang: node.lang
@@ -151,5 +191,4 @@ data.HomePages.edges.forEach(({ node }) => {
     },
   })
 })
-
 }

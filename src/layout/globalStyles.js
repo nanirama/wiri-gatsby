@@ -90,7 +90,7 @@ ul li{list-style:none;}
 h1,h2,h3,h4,h5,h6{margin:0;font-family: 'GelionBold';color:#303030;}
 h1{ font-size:70px;line-height:74px;letter-spacing: -2.35px;}
 h2{ font-size:60px;line-height:65px;letter-spacing: -2.1px;}
-h3{ font-size:28px;line-height:45px; letter-spacing: -1.05px;margin-bottom:10px;}
+h3{ font-size:28px;line-height:45px; letter-spacing: -1.05px;}
 h4{ font-size:18px;line-height:26px;}
 
 p{ font-size:20px;line-height:30px;font-weight: 400;color:#404040;margin:0;padding-bottom:25px;}
@@ -180,7 +180,7 @@ cursor:pointer;
 }
 @media (min-width: 1441px) {
   padding: 15px 40px;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 40px;
 }
     &:hover {

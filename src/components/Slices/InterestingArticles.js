@@ -8,7 +8,6 @@ import BlogItem from "../Blog/BlogItem";
 import { Couldblk } from "../Slices/styled"
 
 const InterestArticles = ({ data, lang }) => {
-    console.log('Iartcles', data)
     return (
         <Couldblk>
             <h2>These could be also interesting</h2>

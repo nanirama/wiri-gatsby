@@ -12,7 +12,6 @@ const Pagination = ({ data }) => {
     numberOfPages,
     paginationPath,
   } = data;
-
   if (numberOfPages > 1) {
     let pages = [];
     for (let i = 0; i < numberOfPages; i++) {
@@ -29,14 +28,14 @@ const Pagination = ({ data }) => {
           <Row middle="xs" around="xs">
             <Col lg={2} md={2} start="lg">
               {previousPagePath ? (
-                <Link to={previousPagePath} className="nextprevbtn svgrotate"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" /></svg><span>Previous</span></Link>
+                <Link to={`/${previousPagePath}`} className="nextprevbtn svgrotate"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" /></svg><span>Previous</span></Link>
               ) : null}
             </Col>
             <Col lg={8} md={8}>
               <PaginationLinks>
                 {pages.map((page) => (
                   <Link
-                    to={page.linkURL}
+                    to={`/${page.linkURL}`}
                     activeClassName="active"
                   >
                     {page.label}
@@ -46,7 +45,7 @@ const Pagination = ({ data }) => {
             </Col>
             <Col xs={2} md={2}>
               {nextPagePath ?
-                <Row end="xs"><Link to={nextPagePath} className="nextprevbtn"><span>Next</span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" /></svg> </Link></Row>
+                <Row end="xs"><Link to={`/${nextPagePath}`} className="nextprevbtn"><span>Next</span><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" /></svg> </Link></Row>
                 : null}
             </Col>
           </Row>

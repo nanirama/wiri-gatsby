@@ -1,0 +1,335 @@
+.home-hero {
+  padding: 80px 40px 40px 80px;
+  background: linear-gradient(0deg, #f8faff -25%, #f6f9ff 125%);
+  border-radius: 20px;
+  @include mq("phone") {
+    border-radius: 36px;
+  }
+
+  .left-side {
+    max-width: 700px;
+    .title {
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .subtitle {
+      color: #303030;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 19.4px;
+      text-align: center;
+      @include mq("phone") {
+        font-size: 30px;
+        line-height: 38px;
+      }
+      @include mq("tablet") {
+        font-size: 14px;
+        line-height: 21px;
+        text-align: left;
+      }
+      @include mq("laptop") {
+        font-size: 18px;
+        line-height: 26px;
+      }
+      @include mq("desktop") {
+        font-size: 20px;
+        line-height: 29px;
+      }
+    }
+    .bottom-text {
+      font-size: 12px;
+      line-height: 24.1px;
+      margin-top: 16px;
+      @include mq("phone") {
+        font-size: 24px;
+        line-height: 49px;
+      }
+      @include mq("tablet") {
+        font-size: 11px;
+        line-height: 21px;
+        text-align: left;
+      }
+      @include mq("laptop") {
+        font-size: 12px;
+        line-height: 25px;
+      }
+      @include mq("desktop") {
+        font-size: 15px;
+        line-height: 30px;
+      }
+      @include mq("x-desktop") {
+        font-size: 20px;
+        line-height: 41px;
+      }
+    }
+    @include mq("tablet", max) {
+      text-align: center;
+      .title {
+        margin-bottom: 20px;
+      }
+      .subtitle {
+        font-size: 25px;
+        line-height: 33px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .right-side {
+    position: relative;
+    text-align: center;
+    background-image: url("../images/hero-back.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    .hero-img {
+      position: relative;
+      width: 152px;
+      @include mq("phone") {
+        width: 311px;
+      }
+      @include mq("tablet") {
+        width: 175px;
+      }
+      @include mq("laptop") {
+        width: 253px;
+      }
+      @include mq("desktop") {
+        width: 249px;
+      }
+      @include mq("x-desktop") {
+        width: 341px;
+      }
+    }
+    .review-img {
+      top: 0;
+      left: 60px;
+      width: 85px;
+      @include mq("phone") {
+        width: 173px;
+      }
+      @include mq("tablet") {
+        width: 125px;
+      }
+      @include mq("laptop") {
+        width: 125px;
+      }
+      @include mq("desktop") {
+        width: 176px;
+      }
+      @include mq("x-desktop") {
+        width: 176px;
+      }
+    }
+    .menu-img {
+      top: calc(40% - 50px);
+      left: 0;
+      transform: translateY(-50%);
+      width: 116px;
+      animation-duration: 13s;
+      @include mq("phone") {
+        width: 200px;
+      }
+      @include mq("tablet") {
+        width: 130px;
+      }
+      @include mq("laptop") {
+        width: 130px;
+      }
+      @include mq("desktop") {
+        width: 170px;
+      }
+      @include mq("x-desktop") {
+        width: 170px;
+      }
+    }
+    .deals-img {
+      top: fs(43px, 100px);
+      right: 20px;
+      width: 80px;
+      animation-duration: 7s;
+      @include mq("phone") {
+        width: 163px;
+      }
+      @include mq("tablet") {
+        width: 118px;
+      }
+      @include mq("laptop") {
+        width: 118px;
+      }
+      @include mq("desktop") {
+        width: 168px;
+      }
+      @include mq("x-desktop") {
+        width: 168px;
+      }
+    }
+    .question-img {
+      top: 35%;
+      right: -20px;
+      width: 89px;
+      animation-duration: 15s;
+      @include mq("phone") {
+        width: 183px;
+      }
+      @include mq("tablet") {
+        width: 132px;
+      }
+      @include mq("laptop") {
+        width: 132px;
+      }
+      @include mq("desktop") {
+        width: 186px;
+      }
+      @include mq("x-desktop") {
+        width: 186px;
+      }
+      @include mq("tablet", max) {
+        right: 0;
+      }
+    }
+    .qr-img {
+      position: absolute;
+      bottom: 0px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      @include mq("phone") {
+        width: 80px;
+        height: 80px;
+      }
+      @include mq("tablet") {
+        width: 60px;
+        height: 60px;
+      }
+      @include mq("laptop") {
+        width: 70px;
+        height: 70px;
+      }
+      @include mq("desktop") {
+        width: 90px;
+        height: 90px;
+      }
+      @include mq("x-desktop") {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  }
+  @include mq("laptop", max) {
+    padding: 40px 20px;
+    .right-side {
+      margin-top: 40px;
+    }
+  }
+
+  .float {
+    position: absolute;
+    animation: float 12s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+      transform: translatey(-20px);
+    }
+    100% {
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+    }
+  }
+}
+
+.wow-clients {
+  margin: 85px 0;
+  @include mq("tablet", max) {
+    margin: 70px 0;
+  }
+  @include mq("phone", max) {
+    margin: 50px 0;
+  }
+}
+
+.app-slider {
+  z-index: 2;
+  .slick-list {
+    padding-top: 28px !important;
+    padding-bottom: 45px !important;
+    @include mq("phone") {
+      padding-bottom: 75px !important;
+    }
+    @include mq("tablet") {
+      padding-bottom: 40px !important;
+    }
+    @include mq("laptop") {
+      padding-bottom: 50px !important;
+    }
+    @include mq("desktop") {
+      padding-bottom: 55px !important;
+    }
+    @include mq("x-desktop") {
+      padding-bottom: 75px !important;
+    }
+  }
+  @include mq("desktop") {
+    max-width: calc(100% - 200px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.rule-slider {
+  z-index: 2;
+  // .slick-list {
+  //   padding-top: 28px !important;
+  //   padding-bottom: 45px !important;
+  //   @include mq("phone") {
+  //     padding-bottom: 75px !important;
+  //   }
+  //   @include mq("tablet") {
+  //     padding-bottom: 40px !important;
+  //   }
+  //   @include mq("laptop") {
+  //     padding-bottom: 50px !important;
+  //   }
+  //   @include mq("desktop") {
+  //     padding-bottom: 55px !important;
+  //   }
+  //   @include mq("x-desktop") {
+  //     padding-bottom: 75px !important;
+  //   }
+  // }
+}
+.pricing-slider {
+  .slick-list {
+    padding-bottom: 43px !important;
+    @include mq("phone") {
+      padding-bottom: 88px !important;
+    }
+    @include mq("tablet") {
+      padding-bottom: 38px !important;
+    }
+    @include mq("laptop") {
+      padding-bottom: 46px !important;
+    }
+  }
+}
+
+.faq-container {
+  margin: 145px 0;
+  @include mq("tablet", max) {
+    margin: 70px 0;
+  }
+  @include mq("phone", max) {
+    margin: 50px 0;
+  }
+}
+
+.pricing-arrows {
+  @include mq("laptop", max) {
+    display: block !important;
+  }
+}
+
+

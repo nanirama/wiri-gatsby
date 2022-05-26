@@ -28,9 +28,9 @@ const PricingTable = () => {
                             <PricingSlide>
                                 <Header>
                                     <p className="price">
-                                        $9
+                                        $59
                                         <span className="per-month">
-                                            /month
+                                            /Per Month
                                         </span>
                                     </p>
                                     <p className="type">Basic</p>
@@ -38,11 +38,10 @@ const PricingTable = () => {
                                 <hr />
                                 <Body>
                                     <ul>
-                                        <li> <SVG src={Check1} /> <p className="feature">1 User</p></li>
-                                        <li> <SVG src={Check1} /> <p className="feature">Up to 5 bookings per day</p></li>
-                                        <li> <SVG src={Check1} /> <p className="feature">30 days chat history</p></li>
-                                        <li> <SVG src={Check1} /> <p className="feature">Up to 5 modules</p></li>
-                                        <li> <SVG src={Check1} /> <p className="feature">Standard support</p></li>
+                                        <li> <SVG src={Check1} /> <p className="feature">Upto 5 Users</p></li>
+                                        <li> <SVG src={Check1} /> <p className="feature">Max 200 objects / month</p></li>
+                                        <li> <SVG src={Check1} /> <p className="feature">Unlimited queries</p></li>
+                                        <li> <SVG src={Check1} /> <p className="feature">Unlimited analytics</p></li>
                                     </ul>
                                     <Footer>
                                         <button
@@ -57,21 +56,20 @@ const PricingTable = () => {
                         <PricingSlide className="green">
                                 <Header>
                                     <p className="price">
-                                        $19
+                                        $99
                                         <span className="per-month">
-                                            /month
+                                        /Per Month
                                         </span>
                                     </p>
-                                    <p className="type">Enhanced</p>
+                                    <p className="type">Optimum</p>
                                 </Header>
                                 <hr />
                                 <Body>
                                     <ul>
-                                        <li> <SVG src={Check2} /> <p className="feature">3 User</p></li>
-                                        <li> <SVG src={Check2} /> <p className="feature">Up to 20 bookings per day</p></li>
-                                        <li> <SVG src={Check2} /> <p className="feature">1 year days chat history</p></li>
-                                        <li> <SVG src={Check2} /> <p className="feature">All modules</p></li>
-                                        <li> <SVG src={Check2} /> <p className="feature">Standard support</p></li>
+                                        <li> <SVG src={Check2} /> <p className="feature">Upto 5 Users</p></li>
+                                        <li> <SVG src={Check2} /> <p className="feature">Max 200 objects / month</p></li>
+                                        <li> <SVG src={Check2} /> <p className="feature">Unlimited queries</p></li>
+                                        <li> <SVG src={Check2} /> <p className="feature">Unlimited analytics</p></li>
                                     </ul>
                                     <Footer>
                                         <button
@@ -86,21 +84,20 @@ const PricingTable = () => {
                         <PricingSlide>
                                 <Header>
                                     <p className="price">
-                                        $39
+                                        $149
                                         <span className="per-month">
-                                            /month
+                                            /Per Month
                                         </span>
                                     </p>
-                                    <p className="type">Unlimited</p>
+                                    <p className="type">Full</p>
                                 </Header>
                                 <hr />
                                 <Body>
                                     <ul>
-                                        <li> <SVG src={Check1} /> <p className="feature">Unlimited User</p></li>
-                                        <li> <SVG src={Check1} /> <p className="feature">Unlimited bookings</p></li>
-                                        <li> <SVG src={Check1} /> <p className="feature">Unlimited chat history</p></li>
-                                        <li> <SVG src={Check1} /> <p className="feature">All modules</p></li>
-                                        <li> <SVG src={Check1} /> <p className="feature">Priority support</p></li>
+                                        <li> <SVG src={Check1} /> <p className="feature">Upto 5 Users</p></li>
+                                        <li> <SVG src={Check1} /> <p className="feature">Max 200 objects / month</p></li>
+                                        <li> <SVG src={Check1} /> <p className="feature">Unlimited queries</p></li>
+                                        <li> <SVG src={Check1} /> <p className="feature">Unlimited analytics</p></li>
                                     </ul>
                                     <Footer>
                                         <button

@@ -18,6 +18,17 @@ exports.linkResolver = doc => {
         : `/${doc.lang.slice(0, 2)}/${doc.uid}`
     }
 
+    case "bloglistingpage": {
+      return doc.lang === prismicConfig.defaultLanguage
+      ? "/blog/"
+      : `/${doc.lang.slice(0, 2)}/blog/`
+    }
+    case "blog_category": {
+      return doc.lang === prismicConfig.defaultLanguage
+        ? `/blog/${doc.uid}`
+        : `/${doc.lang.slice(0, 2)}/blog/${doc.uid}`
+    }
+
     default:
       return "/"
   }

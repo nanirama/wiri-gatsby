@@ -7,7 +7,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Blogimg } from "../Slices/styled"
 
 const ImgSlice = ({ data }) => {
-  console.log('image', data)
     return (    
       <Row>
         <Col lg={12} md={12} sm={12}>

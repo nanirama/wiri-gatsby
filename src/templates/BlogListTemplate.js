@@ -7,31 +7,46 @@ import Pagination from '../components/Pagination';
 
 const BlogListTemplate = (props) => {
 
-  const { data, pageContext, path, location } = props
+  const { data, pageContext, path } = props
+
+  const { allPrismicBlog, catList } = data
+
+  const { basePath, humanPageNumber } = pageContext;
+
+  const blogs = allPrismicBlog.edges.map((blog) => blog.node);
+
+  
 
 
-
-  const {
-    allPrismicBlog: { edges: blogsData },
-  } = data;
-
-  const { basePath, humanPageNumber, categories } = pageContext;
-
-  const blogs = blogsData.map((blog) => blog.node);
 
   if (!blogs) return null;
-
-
   if (!data) return null
+  const activeDocMeta = data.prismicBloglistingpage
+  //const AllBlogs = blogs
+  let Featured_Article = blogs[0]
+  let AllBlogs = blogs.shift()
+  if(data.prismicBloglistingpage.data.featured_article)
+  {
+    const Featured_Article = data.prismicBloglistingpage.data.featured_article.document
+    AllBlogs = data.prismicBloglistingpage.data.featured_article && blogs.filter((item)=>{
+      return item.id!==Featured_Article.id
+    })
+    console.log('AllBlogs',AllBlogs)
+  }
+  console.log('Featured_Article',Featured_Article)
+  console.log('blogs',blogs)
 
   return (
-    <Layout activeDocMeta={pageContext}>
+    <Layout activeDocMeta={activeDocMeta}>
       <BlogIndex
-        blogs={blogs}
+        blogs={AllBlogs}
         basePath={basePath}
         isFirstPage={humanPageNumber === 1}
         path={path}
         lang={pageContext.lang}
+        catList={catList}
+        featuredArticle = {Featured_Article}
+        title={data.prismicBloglistingpage.data.title.text ? data.prismicBloglistingpage.data.title.text : 'Wiri Blog'}
       />
       <Pagination data={pageContext} />
     </Layout>
@@ -40,6 +55,53 @@ const BlogListTemplate = (props) => {
 
 export const data = graphql`
   query($skip: Int!, $limit: Int!, $lang: String!) {
+    catList : allPrismicBlogCategory(filter: {lang: {eq: $lang}}) {
+      edges {
+        node {
+          lang
+          uid
+          data {
+            title {
+              text
+            }
+          }
+        }
+      }
+    }
+    prismicBloglistingpage( lang: { eq: $lang }) {
+      lang
+      type
+      alternate_languages {
+        id
+        type
+        lang
+        uid
+      }
+      data {
+          title {
+            text
+          }
+          featured_article {
+            document {
+              ...BlogFeaturedBlog
+            }
+          }
+          body1 {
+          ... on PrismicBloglistingpageDataBody1MetaData{
+            id
+            primary {
+              meta_title
+              meta_description
+              seo_meta_image {
+                fixed(width: 1200) {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     allPrismicBlog(
       sort: { fields: last_publication_date, order: DESC }
       skip: $skip
@@ -50,6 +112,12 @@ export const data = graphql`
           node {
             id
             uid
+            alternate_languages {
+              id
+              type
+              lang
+              uid
+            }
             data {
               title {
                 text
@@ -60,7 +128,7 @@ export const data = graphql`
                 html
               }
               article_image {
-                gatsbyImageData(layout: CONSTRAINED, width: 550)
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }
