@@ -148,6 +148,7 @@ const Header = (props) => {
   console.log('Page Props', props.activeDocMeta.data.body1[0].primary.meta_title)
   return (
     <>
+    {props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && (
       <Seo
         headerData={headerData}
         title={props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && props.activeDocMeta.data.body1[0].primary.meta_title && props.activeDocMeta.data.body1[0].primary.meta_title}
@@ -155,6 +156,8 @@ const Header = (props) => {
         seoImage={props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && props.activeDocMeta.data.body1[0].primary.seo_meta_image && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed.src && props.activeDocMeta.data.body1[0].primary.seo_meta_image.fixed.src}
         lang={props.activeDocMeta.lang}
       />
+    )}
+      
       <header>
         <Navbar>
         <Grid>
