@@ -145,7 +145,6 @@ const Header = (props) => {
       {props.data.label}
     </components.Option>
   )
-  console.log('Page Props', props.activeDocMeta.data.body1[0].primary.meta_title)
   return (
     <>
     {props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && (
