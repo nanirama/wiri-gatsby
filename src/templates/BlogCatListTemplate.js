@@ -15,7 +15,8 @@ const BlogCatListTemplate = (props) => {
     const blogs = allPrismicBlog.edges.map((blog) => blog.node);
   
     if (!blogs) return null;  
-    if (!data) return null
+    if (!data) return null;
+    if(!data.prismicBlogCategory) return null;
     const activeDocMeta = data.prismicBlogCategory
     console.log('orginal blogs',blogs)
 
