@@ -22,7 +22,6 @@ const BlogListTemplate = (props) => {
   if (!blogs) return null;
   if (!data) return null
   const activeDocMeta = data.prismicBloglistingpage
-  //const AllBlogs = blogs
   let Featured_Article = blogs[0]
   let AllBlogs = blogs.shift()
   if(data.prismicBloglistingpage.data.featured_article)
@@ -31,10 +30,7 @@ const BlogListTemplate = (props) => {
     AllBlogs = data.prismicBloglistingpage.data.featured_article && blogs.filter((item)=>{
       return item.id!==Featured_Article.id
     })
-    console.log('AllBlogs',AllBlogs)
   }
-  console.log('Featured_Article',Featured_Article)
-  console.log('blogs',blogs)
 
   return (
     <Layout activeDocMeta={activeDocMeta}>

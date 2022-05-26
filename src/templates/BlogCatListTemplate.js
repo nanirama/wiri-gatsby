@@ -21,15 +21,13 @@ const BlogCatListTemplate = (props) => {
 
     let Featured_Article = blogs.length > 1 && blogs[0]
     let AllBlogs = blogs.length > 1 ? blogs.shift() : blogs
-    if(data.prismicBlogCategory.data.featured_article)
+    if(data.prismicBloglistingpage.data.featured_article)
     {
-      const Featured_Article = data.prismicBlogCategory.data.featured_article.document
-      AllBlogs = data.prismicBlogCategory.data.featured_article && blogs.filter((item)=>{
+      const Featured_Article = data.prismicBloglistingpage.data.featured_article.document
+      AllBlogs = data.prismicBloglistingpage.data.featured_article && blogs.filter((item)=>{
         return item.id!==Featured_Article.id
       })
-      console.log('AllBlogs',AllBlogs)
     }
-    console.log('Featured_Article',Featured_Article)
     
   return (
     <Layout activeDocMeta={activeDocMeta}>
