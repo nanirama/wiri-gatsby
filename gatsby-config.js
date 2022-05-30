@@ -50,14 +50,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-react-svg`,
-      options: {
-        rule: {
-          include: /svgs/,
-        },
-      },
-    },
-    {
       resolve: "gatsby-source-prismic",
       options: {
         repositoryName: process.env.PRISMIC_REPO_NAME,
