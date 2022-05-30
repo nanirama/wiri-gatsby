@@ -50,9 +50,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-preconnect',
+      resolve: `gatsby-plugin-react-svg`,
       options: {
-        domains: ['https://www.googletagmanager.com'],
+        rule: {
+          include: /svgs/,
+        },
       },
     },
     {
