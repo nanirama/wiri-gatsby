@@ -30,7 +30,6 @@ const BlogTemplate = (props) => {
   const pageContent = data.prismicBlog
 
   //const page = pageContent.data || {}
-  console.log('cat list', pageContent.data.category1)
   return (
     <Layout activeDocMeta={pageContent}>
       <Blogwrapper>

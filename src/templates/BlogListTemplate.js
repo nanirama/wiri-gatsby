@@ -31,10 +31,7 @@ const BlogListTemplate = (props) => {
     AllBlogs = data.prismicBloglistingpage.data.featured_article && blogs.filter((item)=>{
       return item.id!==Featured_Article.id
     })
-    console.log('AllBlogs',AllBlogs)
   }
-  console.log('Featured_Article',Featured_Article)
-  console.log('blogs',blogs)
 
   return (
     <Layout activeDocMeta={activeDocMeta}>

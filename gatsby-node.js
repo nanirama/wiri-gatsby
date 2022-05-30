@@ -164,9 +164,6 @@ data.BlogCategories.edges.forEach(({ node }) => {
   }) 
   
   if(blogsWithCat.length>0){
-    console.log('cat lang',node.lang)
-    console.log('cat node.uid',node.uid)
-    console.log('cat blogs', blogsWithCat.length)
     const categoryPath =  node.lang === prismicConfig.defaultLanguage ? `${basePath}/${node.uid}` : `/${node.lang.slice(0, 2)}/${basePath}/${node.uid}`
     paginate({
       createPage,

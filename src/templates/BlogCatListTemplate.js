@@ -17,7 +17,6 @@ const BlogCatListTemplate = (props) => {
     if (!blogs) return null;  
     if (!data) return null
     const activeDocMeta = data.prismicBlogCategory
-    console.log('orginal blogs',blogs)
 
     let Featured_Article = blogs.length > 1 && blogs[0]
     let AllBlogs = blogs.length > 1 ? blogs.shift() : blogs

@@ -13,7 +13,6 @@ const HomePage = (props) => {
   const pageContent = data.prismicHomepage
   const page = pageContent.data || {}
 
-  console.log('pageContent',pageContent)
 
   return(
     <Layout activeDocMeta={pageContent}>

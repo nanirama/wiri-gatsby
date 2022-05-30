@@ -20,7 +20,6 @@ const BlogIndex = ({ blogs, basePath, isFirstPage, categories, path, lang, cat='
     query: "",
   });
 
-  console.log('FeaturedArticle', featuredArticle)
    const handleInputChange = event => {
     const query = event.target.value;
     const filteredPosts = blogs.filter(blog => {      
