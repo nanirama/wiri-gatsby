@@ -31,7 +31,6 @@ const GlobalStyle = createGlobalStyle`
 	font-family: 'GelionLight';
 	src: local('GelionLight'), local('GelionLight'),
 	url(${GelionLightFont}) format('eot'),
-	url(${GelionLightFontTtf}) format('ttf'),
 	url(${GelionLightFontWoff2}) format('woff2'),
 	url(${GelionLightFontWoff}) format('woff');
 	font-weight: 300;
@@ -43,7 +42,6 @@ const GlobalStyle = createGlobalStyle`
 	font-family: 'GelionRegular';
 	src: local('GelionRegular'), local('GelionRegular'),
 	url(${GelionRegularFont}) format('eot'),
-	url(${GelionRegularFontTtf}) format('ttf'),
 	url(${GelionRegularFontWoff2}) format('woff2'),
 	url(${GelionRegularFontWoff}) format('woff');
 	font-weight: 400;
@@ -55,7 +53,6 @@ const GlobalStyle = createGlobalStyle`
 	font-family: 'GelionMedium';
 	src: local('GelionMedium'), local('GelionMedium'),
 	url(${GelionMediumFont}) format('eot'),
-	url(${GelionMediumFontTtf}) format('ttf'),
 	url(${GelionMediumFontWoff2}) format('woff2'),
 	url(${GelionMediumFontWoff}) format('woff');
 	font-weight: 500;
@@ -67,7 +64,6 @@ const GlobalStyle = createGlobalStyle`
 	font-family: 'GelionSemiBold';
 	src: local('GelionSemiBold'), local('GelionSemiBold'),
 	url(${GelionSemiBoldFont}) format('eot'),
-	url(${GelionSemiBoldFontTtf}) format('ttf'),
 	url(${GelionSemiBoldFontWoff2}) format('woff2'),
 	url(${GelionSemiBoldFontWoff}) format('woff');
 	font-weight: 600;
@@ -79,7 +75,6 @@ const GlobalStyle = createGlobalStyle`
 	font-family: 'GelionBold';
 	src: local('GelionBold'), local('GelionBold'),
 	url(${GelionBoldFont}) format('eot'),
-	url(${GelionBoldFontTtf}) format('ttf'),
 	url(${GelionBoldFontWoff2}) format('woff2'),
 	url(${GelionBoldFontWoff}) format('woff');
 	font-weight: 700;
