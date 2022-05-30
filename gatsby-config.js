@@ -58,6 +58,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://www.googletagmanager.com'],
+      },
+    },
+    {
       resolve: "gatsby-source-prismic",
       options: {
         repositoryName: process.env.PRISMIC_REPO_NAME,
