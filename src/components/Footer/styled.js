@@ -32,10 +32,10 @@ export const FooterWrapper = styled.div`
 position: relative;padding-top: 100px;background-color: #f6f9ff;border-radius: 60px 60px 0 0;
 background-image: linear-gradient(to bottom, #f8faff 0%, #f6f9ff 100%);z-index: 1;
 &::before {
-    content: ""; position: absolute;top: 0; left: 0;width: 160px; height: 218px; background-image: url(${footerback1});background-repeat: no-repeat; background-size: contain;  z-index: -1;
+    content: ""; position: absolute;top: 0; left: 0;width: 160px; height: 218px; background-image: url(${props => props.Fback1});background-repeat: no-repeat; background-size: contain;  z-index: -1;
 }
 &::after {
-    content: ""; position: absolute; bottom: 0;right: 0;width: 188px; height: 497px;background-image: url(${footerback2}); background-repeat: no-repeat;background-size: contain;z-index: -1;
+    content: ""; position: absolute; bottom: 0;right: 0;width: 188px; height: 497px;background-image: url(${props => props.Fback2}); background-repeat: no-repeat;background-size: contain;z-index: -1;
     ${down("lg")} {
         display: none;
     }

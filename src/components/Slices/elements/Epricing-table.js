@@ -1,16 +1,31 @@
 import React, { useState, useEffect } from "react"
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import SVG from "react-inlinesvg"
-
+import { useStaticQuery, graphql } from "gatsby"
 import { PricingSection, TopText, Heading, Plan, Button, Tag, PricingSlider, PricingSlide, Header, Body, Footer } from "./styled"
 
 import Check1 from "../../../assets/images/check1.svg"
 import Check2 from "../../../assets/images/check2.svg"
 
-
-
-
 const EPricingTable = ({ data }) => {
+    const { PricingBack1, PricingBack2 } = useStaticQuery(graphql`
+        query {
+            PricingBack1: file(relativePath: {eq: "pricing-back1.png"}) {
+                childImageSharp {
+                    fixed(width: 351, height: 320) {
+                        srcWebp
+                    }
+                }
+            }
+            PricingBack2: file(relativePath: {eq: "pricing-back2.png"}) {
+                childImageSharp {
+                    fixed(width: 144, height: 140) {
+                        srcWebp
+                    }
+                }
+            }
+        }
+  `)
     const { default_monthly,
         per_year_label,
         per_month_label,
@@ -28,7 +43,7 @@ const EPricingTable = ({ data }) => {
       }, [plan]);
     return (
         <Grid fluid>
-            <PricingSection>
+            <PricingSection PricingBack1={PricingBack1.childImageSharp.fixed.srcWebp}>
                 <Grid>
                     <TopText>
                         <Heading>{title.text} <span className="txt-green">.</span></Heading>
@@ -46,7 +61,7 @@ const EPricingTable = ({ data }) => {
                         >{year_label}</Button>
                         <Tag>{save_label.text}</Tag>
                     </Plan>
-                    <PricingSlider>
+                    <PricingSlider PricingBack2={PricingBack2.childImageSharp.fixed.srcWebp}>
                     <Row>
                         {body && body.map((pricing,index)=>{
                             const {button_label,

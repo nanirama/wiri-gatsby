@@ -380,10 +380,17 @@ ${down("lg")} {
   text-align:center;
 }
 `
+
+export const AppSlider = styled.div`
+.app-arrows{ display:block;}
+`
+
 export const AppSlide = styled.div`
 .gatsby-image-wrapper{
 box-shadow: 0 12px 43px rgba(83, 96, 129, 0.17);
   margin: 0 10px;
+  margin-bottom: 45px;
+
   ${up("sm")} {
     box-shadow: 0 20px 73px rgba(83, 96, 129, 0.17);
   }
@@ -398,6 +405,8 @@ box-shadow: 0 12px 43px rgba(83, 96, 129, 0.17);
   }
   ${up("xxl")} {
     box-shadow: 0 20px 73px rgba(83, 96, 129, 0.17);
+    margin-bottom: 80px;
+
   }
 }
 ${down("lg")} {
@@ -413,7 +422,7 @@ ${up("lg")} {
   .row-reverse{flex-direction:row-reverse;
     .widget-name{margin-left:0em;margin-right:10px }
   }
-  padding:120px 0 70px 0;
+  padding:70px 0;
 }
 ${down("md")} {
   padding:30px 0;

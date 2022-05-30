@@ -71,6 +71,7 @@ function Seo({ description, lang, meta, title, seoImage, headerData }) {
         },
       ].concat(meta)}
     >
+      <link rel="preload" as="font" crossorigin></link>
        {headerData && headerData.custom_scripts?.map((item, idx) => {
           return parse(item.code)
         })}

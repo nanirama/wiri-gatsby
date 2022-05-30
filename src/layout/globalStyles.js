@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
 	url(${GelionLightFontWoff}) format('woff');
 	font-weight: 300;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -47,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
 	url(${GelionRegularFontWoff}) format('woff');
 	font-weight: 400;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -58,6 +60,7 @@ const GlobalStyle = createGlobalStyle`
 	url(${GelionMediumFontWoff}) format('woff');
 	font-weight: 500;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -69,6 +72,7 @@ const GlobalStyle = createGlobalStyle`
 	url(${GelionSemiBoldFontWoff}) format('woff');
 	font-weight: 600;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -80,6 +84,7 @@ const GlobalStyle = createGlobalStyle`
 	url(${GelionBoldFontWoff}) format('woff');
 	font-weight: 700;
 	font-style: normal;
+	font-display: swap;
 }
 
 body{margin:auto; float:none; font-family: 'GelionRegular',sans-serif !important; sans-serif !important;font-weight: 400; color:#3C3C3B;}

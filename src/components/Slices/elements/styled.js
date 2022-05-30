@@ -2,16 +2,6 @@ import styled from "styled-components"
 
 import {up, down } from "styled-breakpoints"
 
-import Heroback from "../../../assets/images/hero-back.png"
-import AppBack from "../../../assets/images/app-back.png"
-import WidgetBack from "../../../assets/images/widget-back.png"
-import CTABack from "../../../assets/images/cta-back.png"
-import PricingBack1 from "../../../assets/images/pricing-back1.png"
-import PricingBack2 from "../../../assets/images/pricing-back2.png"
-
-
-/*** Hero Section Styles ***/
-
 export const HeroSection = styled.div`
 padding: 80px 0px 40px 0px;
 background: linear-gradient(0deg, #f8faff -25%, #f6f9ff 125%);
@@ -69,7 +59,7 @@ position: relative;
 `
 export const HeroImage = styled.div`
 position: relative;text-align: center;padding-left:30px;
-background-image: url(${Heroback});background-repeat: no-repeat;background-size: contain;
+background-image: url(${props => props.Heroback});background-repeat: no-repeat;background-size: contain;
 ${up("xl")} {
     margin-left:20px;
     padding-left:80px;
@@ -297,6 +287,7 @@ color: #636363;
 export const AppSection = styled.div`
 position:relative;
 margin:40px 0;
+
 `
 export const Wrapper = styled.div`
 position: relative;
@@ -329,7 +320,7 @@ z-index: 1;
     position: absolute;
     top: 0;right: 0;
     width: 90px;height: 104px;
-    background-image: url(${AppBack});
+    background-image: url(${props => props.AppBack});
     background-repeat: no-repeat;background-size: contain;
     z-index: -1;
     ${up("sm")} {
@@ -380,10 +371,18 @@ ${down("lg")} {
   text-align:center;
 }
 `
+export const AppSlider = styled.div`
+${down("lg")} {
+.app-arrows{ display:block;
+button{cursor:pointer;}
+}
+}
+`
 export const AppSlide = styled.div`
 .gatsby-image-wrapper{
 box-shadow: 0 12px 43px rgba(83, 96, 129, 0.17);
-  margin: 0 10px;
+  margin: 30px 10px;
+  margin-bottom:45px;
   ${up("sm")} {
     box-shadow: 0 20px 73px rgba(83, 96, 129, 0.17);
   }
@@ -398,6 +397,8 @@ box-shadow: 0 12px 43px rgba(83, 96, 129, 0.17);
   }
   ${up("xxl")} {
     box-shadow: 0 20px 73px rgba(83, 96, 129, 0.17);
+    margin-bottom: 45px;
+    margin-bottom: 80px;
   }
 }
 ${down("lg")} {
@@ -413,15 +414,17 @@ ${up("lg")} {
   .row-reverse{flex-direction:row-reverse;
     .widget-name{margin-left:0em;margin-right:10px }
   }
-  padding:120px 0 70px 0;
+  padding:70px 0;
+}
+${down("lg")} {
+  padding:50px 0;
 }
 ${down("md")} {
   padding:30px 0;
 }
-}
 `
 export const WidgetImg = styled.div`
-background-image: url(${WidgetBack});
+background-image: url(${props => props.WidgetBack});
 background-repeat: no-repeat;
 background-size: contain;
 text-align: center;
@@ -458,9 +461,9 @@ cursor: pointer;
 .widget-name {
   font-family: 'GelionMedium';
   color: ${props => (props.active ? "#4478db" : "#303030")};
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
-  line-height: 28px;
+  line-height: 22px;
   letter-spacing: -1.02px;
   white-space: pre-line;
   margin-left:10px;
@@ -468,7 +471,7 @@ cursor: pointer;
   padding:0;
   ${up("sm")} {
     font-size: 18px;
-    line-height: 26px;
+    line-height: 24px;
     letter-spacing: -0.74px;
   }
   ${up("md")} {
@@ -556,9 +559,9 @@ ${down("md")} {
 }
 `
 export const WidgetSlide = styled.div`
-  max-width: 200px;
+  // max-width: 200px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
-  margin:0 20px;
+  margin:0 10px;
 `
 export const DesktopWidget = styled.div`
 ${down("md")} {
@@ -569,11 +572,12 @@ export const MobileWidget = styled.div`
 ${up("md")} {
   display:none;
 }
+.arrows{ display:block;
+
+button{cursor:pointer;}}
 `
 
 /*** Call to action Section Styles ***/
-
-
 
 export const CallSection = styled.div`
 position: relative;
@@ -590,7 +594,7 @@ z-index: 0;
   right: 0;
   width: 391px;
   height: 351px;
-  background-image: url(${CTABack});
+  background-image: url(${props => props.CtaBack});
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
@@ -605,8 +609,11 @@ ${down("md")} {
   padding-bottom: 30px;
   border-radius: 20px;
 }
+${down("xl")} {
+margin: 50px 0;
+}
 ${down("lg")} {
-margin:30px 0 60px 0;
+margin:30px 0;
 }
 h2{
   &:before{right:0;margin:0 auto;}
@@ -624,7 +631,10 @@ h2{
   &:before{right:0;margin:0 auto;}
 }
 ${down("lg")} {
-  padding:30px 0 60px 0;
+  padding:30px 0;
+}
+${down("sm")} {
+button{padding: 0 10px !important;}
 }
 
 
@@ -771,7 +781,7 @@ ${down("lg")} {
   left: 0;
   width: 351px;
   height: 320px;
-  background-image: url(${PricingBack1});
+  background-image: url(${props => props.PricingBack1});
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
@@ -904,7 +914,7 @@ export const PricingSlider = styled.div`
   right: 0;
   width: 144px;
   height: 140px;
-  background-image: url(${PricingBack2});
+  background-image: url(${props => props.PricingBack2});
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;
@@ -944,7 +954,7 @@ ${up("xxl")} {
   right: 0;
   width: 144px;
   height: 140px;
-  background-image: ${props => (props.active ? `url(${PricingBack2})` : "")};
+  background-image: ${props => (props.active ? `url(${props => props.PricingBack2})` : "")};
   background-repeat: no-repeat;
   background-size: contain;
   z-index: -1;

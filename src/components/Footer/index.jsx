@@ -1,8 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-
-import styled from "styled-components"
-import { down } from "styled-breakpoints"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import { Logo2 } from "../../utils/imgImport"
 import { handleLangContent } from "../../utils/handleLangContent"
 import { linkResolver } from "../../utils/linkResolver"
@@ -15,6 +12,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 
 const FooterMenu = ({ lang, data, cols }) => { 
+
   const clss = "col-"+cols;
   return (
     <div className={clss}>
@@ -49,8 +47,22 @@ const FooterMenu = ({ lang, data, cols }) => {
 
 const Footer = (props) => {
   const footer_menus = []
-  const { allPrismicFooter, allPrismicNavigation } = useStaticQuery(graphql`
+  const { allPrismicFooter, allPrismicNavigation, Fback1, Fback2  } = useStaticQuery(graphql`
     query {
+      Fback1: file(relativePath: {eq: "footer-back1.png"}) {
+        childImageSharp {
+          fixed(height: 218, width: 160) {
+            srcWebp
+          }
+        }
+      }
+      Fback2: file(relativePath: {eq: "footer-back2.png"}) {
+        childImageSharp {
+          fixed(width: 188, height: 497) {
+            srcWebp
+          }
+        }
+      }
       allPrismicFooter {
         nodes {
           lang
@@ -167,7 +179,7 @@ const Footer = (props) => {
 
   return (
     <Grid fluid>
-       <FooterWrapper>
+       <FooterWrapper Fback1={Fback1.childImageSharp.fixed.srcWebp} Fback2={Fback2.childImageSharp.fixed.srcWebp}>
       <Grid>     
         <FooterMenus>
           <Row>

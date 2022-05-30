@@ -2,8 +2,20 @@ import React from "react"
 import { GatsbyImage, getImage} from "gatsby-plugin-image"
 import { HeroSection, HeroHeading, HeroImage } from "./styled"
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { useStaticQuery, graphql } from "gatsby"
 
 const EHomeHero = ({data})=>{
+  const { Herobackground } = useStaticQuery(graphql`
+    query {
+      Herobackground: file(relativePath: {eq: "hero-back.png"}) {
+        childImageSharp {
+          fluid {
+            srcWebp
+          }
+        }
+      }
+    }
+  `)
     const { title, subtitle, button_label, under_button, hero_image, menu_image, promotion_image, rating_image, qr_image, question_image  } = data.primary.hero.document.data
   
     return (
@@ -21,7 +33,7 @@ const EHomeHero = ({data})=>{
                   <p className="bottom-text">{under_button}</p>
                 </Col>
                 <Col xs={12} lg={6}>
-                  <HeroImage>
+                  <HeroImage Heroback={Herobackground.childImageSharp.fluid.srcWebp}>
                   <GatsbyImage
                       image={getImage(hero_image)}
                       alt="hero img"
