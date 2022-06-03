@@ -23,7 +23,7 @@ const EHomeHero = ({data})=>{
           <HeroSection>
             <Grid>
               <Row middle="xs">
-                <Col xs={12} lg={6}>
+                <Col xs={12} lg={6} className="pr-6">
                   <HeroHeading>
                     <span className="blue-line">{title}</span>
                     <span className="txt-green">.</span>

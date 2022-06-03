@@ -25,37 +25,35 @@ export default CatMenu
 
 const BlogMenu = styled.div`
 margin:40px 0;
-ul {margin:0; padding:0; display: flex; align-items: center; justify-content: center;flex-direction:column;
-  ${up("sm")} {
-flex-direction:row;
+${down("sm")} {
+margin:20px 0 0 0;
+}
+ul {margin:0; padding:0; display: flex; align-items: center; justify-content: center;
+  ${down("sm")} {
+  flex-wrap:wrap;
   }
 }
-ul li {list-style:none; float:left; margin-bottom:30px;
+ul li {list-style:none; float:left; 
   .active {background-color:#4478db; color:#fff;box-shadow: 10px 0px 24px rgba( 68, 120, 219,0.27); 
     &:before { content:'';position: absolute;bottom:-7px; left:44%;width:24px;height:9px;
     background-image: url(${Blogmenubg});background-repeat:no-repeat; z-index:999;}
   }
   &:last-child{margin-bottom:0px;}
-${up("sm")} {
-  margin-bottom:0;
-  }
 }
 
 ul li a {position:relative;
   color:#5f5f5f; font-size:17px; line-height:25px; text-transform:capitalize; border-radius:10px;
   padding:13px 25px; margin:0 5px;
-
   &:hover {background-color:#4478db; box-shadow: 10px 0px 24px rgba( 68, 120, 219,0.27); color:#fff;
   &:before { content:'';position: absolute;bottom:-7px; left:44%;width:24px;height:9px;
 background-image: url(${Blogmenubg});background-repeat:no-repeat; z-index:999;}
   }
   ${up("md")} {
-    font-size:22px; line-height:30px;padding:13px 30px;
+    font-size:20px; line-height:28px;
   }
-  ${up("xl")} {
-    font-size:25px; line-height:35px;
-  }
-
+  ${down("sm")} {
+    margin-bottom: 20px;
+  display: inline-block;
 }
 `
 

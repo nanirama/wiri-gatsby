@@ -12,6 +12,7 @@ export const Row = styled.div`
   }
   ${down("md")} {
     h2 {
+      
       margin-left: auto;
       margin-right: auto;
       text-align: center;

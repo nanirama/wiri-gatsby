@@ -78,6 +78,9 @@ export const Inner = styled.div`
     padding-top: 156px;
     padding-bottom: 452px;
   }
+
+
+
 `
 export const AppSlider = styled.div`
   position: absolute;

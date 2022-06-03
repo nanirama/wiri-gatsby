@@ -88,9 +88,9 @@ img{ width:100%;height:auto;}
 ul{margin:0;padding:0;}
 ul li{list-style:none;}
 h1,h2,h3,h4,h5,h6{margin:0;font-family: 'GelionBold';color:#303030;}
-h1{ font-size:70px;line-height:74px;letter-spacing: -2.35px;}
-h2{ font-size:60px;line-height:65px;letter-spacing: -2.1px;}
-h3{ font-size:28px;line-height:45px; letter-spacing: -1.05px;}
+h1{ font-size:70px;line-height:74px;letter-spacing: -.3px;}
+h2{ font-size:60px;line-height:65px;letter-spacing: -.3px;}
+h3{ font-size:28px;line-height:45px; letter-spacing: -.3px;}
 h4{ font-size:18px;line-height:26px;}
 
 p{ font-size:20px;line-height:30px;font-weight: 400;color:#404040;margin:0;padding-bottom:25px;}
@@ -151,32 +151,35 @@ hr{ border:1px solid #4E50F7; width:100%;margin:64px 0;box-sizing: border-box;}
 
 .btn-green {font-family: 'GelionMedium';
 font-size: 20px;font-weight: 500;line-height: 23px;padding: 10px 24px;color:#fff;
-background-color:#08b689;border-radius:10px;display:inline-block;border:none;cursor:pointer;
+background-color:#08b689;border-radius:6px;display:inline-block;border:none;cursor:pointer;
 &:hover {
 	background-color: #4478db;
+  }
+  @media (min-width: 576px) {
+	border-radius:10px;
   }
 }
 
 .btn-blue {font-family: 'GelionBold';
-padding: 12px 30px;
+padding: 10px 25px;
 background-color: #4478db;
 border: none;
-border-radius: 10px;
+border-radius: 6px;
 color: #fff;
 font-weight: 700;
-font-size: 16px;
+font-size: 18px;
 line-height: 30px;
 letter-spacing: -0.32px;
 cursor:pointer;
 @media (min-width: 576px) {
 	padding: 12px 30px;
 	font-size: 22px;
-	line-height: 35px;
+	line-height: 32px;
+	border-radius: 10px;
 }
 @media (min-width: 993px) {
-	padding: 12px 30px;
-	font-size: 24px;
-	line-height: 35px;
+	font-size: 25px;
+	line-height: 36px;
 }
 @media (min-width: 1441px) {
   padding: 15px 40px;
@@ -227,7 +230,7 @@ cursor:pointer;
 
 .subtitle{
 color: #303030;
-font-size: 15px;
+font-size: 17px;
 font-weight: 400;
 line-height: 24px;
 margin-bottom: 0;
@@ -255,11 +258,9 @@ margin-bottom: 0;
 
 
 @media (min-width: 1600px) {
-	.container-fluid {padding:0 100px !important;}
+	.container-fluid {max-width:1400px;margin:0 auto;}
 }
-@media (min-width: 1366px) and (max-width: 1599px) {
-	.container-fluid {padding:0 40px !important;}
-}
+
 @media (max-width: 991px) {
 	.container{ width:100%;padding:0 16px;}
 }

@@ -34,8 +34,8 @@ const BlogTemplate = (props) => {
     <Layout activeDocMeta={pageContent}>
       <Blogwrapper>
         <Grid>
-          <Row>
-            <Col lg={12} md={12} sm={12}>
+          <Row center="xs">
+            <Col lg={10} md={12} sm={12}>
               <h1>{pageContent.data.title.text}</h1>
               <h6>Published on {Moment(pageContent.data.publish_date).format('MMMM D, YYYY')}</h6>
               <Blogimg>

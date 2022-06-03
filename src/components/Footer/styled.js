@@ -18,15 +18,16 @@ ${down("lg")} {
 }
 `
 export const Social = styled.a`
-display: block; position: relative;width: 65px;height: 65px;flex-shrink: 0; background-color: #fff; 
+display: block; position: relative;width: 55px;height: 55px;flex-shrink: 0; background-color: #fff; 
 box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04); border-radius: 50%; margin-right: 10px;
   &:hover {
     background-color:#08b689;
+    svg{filter:invert(1) sepia(0) saturate(1) hue-rotate(0deg) brightness(8)}
   }
   ${down("md")} {
     width: 45px;height: 45px;
   }
-  svg {position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);}
+  svg {position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);height:16px;}
 `
 export const FooterWrapper = styled.div`
 position: relative;padding-top: 100px;background-color: #f6f9ff;border-radius: 60px 60px 0 0;
@@ -44,10 +45,16 @@ ${down("lg")} {
     padding-top:50px;
     .container{ padding:0 15px;width:100%;}
 }
+${down("sm")} {
+    border-radius: 30px 30px 0 0;
+    &::before {
+        width: 130px; height:130px;
+    }
+}
 `
 
 export const FooterMenus = styled.div`
-padding-bottom: 100px; border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+padding-bottom: 80px; border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 ${down("md")} { 
     padding-bottom:0px !important;  
 }

@@ -8,8 +8,8 @@ import { Imggroup, Blogimg1, Blogitem } from "../Slices/styled"
 
 const TextImageSlice = ({ data }) => {
     return (
-        <Row>
-            <Col lg={12} md={12} sm={12}>
+        <Row center="xs">
+            <Col lg={10} md={12} sm={12}>
                 <Imggroup>
                     <Blogimg1>
                         <StaticImage src="../../assets/images/img6.png" alt="" />

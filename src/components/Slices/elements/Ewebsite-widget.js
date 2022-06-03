@@ -62,8 +62,7 @@ return (
     <WidgetSection>
       <Grid>
         <Title>
-          <span className="blue-line">{title}</span>
-          <span className="txt-green">.</span>
+          <span className="blue-line">{title}</span><span className="txt-green">.</span>
         </Title>
 
         <DesktopWidget>
@@ -76,10 +75,10 @@ return (
                       if (index % 2 == 0) {
                         return (
                           <WidgetItem className="row-reverse" key={index}>
-                            <div className="widget-img" onClick={e => setCenterImage(widget.screenshot)}>
+                            <div className="widget-img" onMouseEnter={e => setCenterImage(widget.screenshot)} onClick={e => setCenterImage(widget.screenshot)}>
                               <SVG src={widget.icon.fixed.src} />
                             </div>
-                            <p className="widget-name" onClick={e => setCenterImage(widget.screenshot)}>{widget.label}</p>
+                            <p className="widget-name" onMouseEnter={e => setCenterImage(widget.screenshot)} onClick={e => setCenterImage(widget.screenshot)}>{widget.label}</p>
                           </WidgetItem>
                         )
                       }
@@ -99,8 +98,8 @@ return (
                   if (index % 2 != 0) {
                     return (
                       <WidgetItem key={index}>
-                        <div className="widget-img" onClick={e => setCenterImage(widget.screenshot)}><SVG src={widget.icon.fixed.src} /></div>
-                        <p className="widget-name" first="xs" onClick={e => setCenterImage(widget.screenshot)}>{widget.label}</p>
+                        <div className="widget-img" onMouseEnter={e => setCenterImage(widget.screenshot)} onClick={e => setCenterImage(widget.screenshot)}><SVG src={widget.icon.fixed.src} /></div>
+                        <p className="widget-name" first="xs" onMouseEnter={e => setCenterImage(widget.screenshot)} onClick={e => setCenterImage(widget.screenshot)}>{widget.label}</p>
                       </WidgetItem>
                     )
                   }

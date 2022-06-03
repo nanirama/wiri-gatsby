@@ -9,6 +9,8 @@ import { Couldblk } from "../Slices/styled"
 
 const InterestArticles = ({ data, lang }) => {
     return (
+        <Row center="xs">
+        <Col lg={10} md={12} sm={12}>
         <Couldblk>
             <h2>These could be also interesting</h2>
             <Row>
@@ -19,6 +21,8 @@ const InterestArticles = ({ data, lang }) => {
                 })}
             </Row>
         </Couldblk>
+        </Col>
+        </Row>
     )
 }
 

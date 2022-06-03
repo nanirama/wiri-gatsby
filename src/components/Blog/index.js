@@ -95,7 +95,7 @@ margin-bottom:20px;
 `
 const Blogtop = styled.div`
 display:flex; align-items:center; justify-content:center; text-align:center; margin-top:50px;
-h1 {font-size:40px; line-height:45px; font-weight:bold; text-transform:capitalize; padding-bottom:30px;
+h1 {font-size:50px; line-height:55px; text-transform:capitalize; padding-bottom:20px;
   ${up("sm")} {
     font-size:70px; line-height:70px;
   }
@@ -104,10 +104,10 @@ h1 {font-size:40px; line-height:45px; font-weight:bold; text-transform:capitaliz
   }
   ${up("xl")} {
     font-size:95px; line-height:95px;
-  }
-  ${up("xxl")} {
-    font-size:106px; line-height:105px;
-  }
+  }  
+}
+${down("sm")} {
+  margin-top:20px;
 }
 `
 const Blogsearch = styled.div`

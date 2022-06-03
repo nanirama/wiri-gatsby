@@ -8,8 +8,8 @@ import { Blogimg } from "../Slices/styled"
 
 const ImgSlice = ({ data }) => {
     return (    
-      <Row>
-        <Col lg={12} md={12} sm={12}>
+      <Row center="xs">
+        <Col lg={10} md={12} sm={12}>
           {data && data.image_heading && <h3>{data.image_heading.text}</h3>}
           {data && data.block_image && (
             <Blogimg>

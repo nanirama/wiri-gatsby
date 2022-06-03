@@ -30,7 +30,7 @@ const EFaq = ({data}) => {
           </Col>
           <Col xs={12} lg={6}>
             <FaqContent>
-              <Heading>{title} <span className="txt-green">.</span></Heading>
+              <Heading>{title}<span className="txt-green">.</span></Heading>
               <StyledContainer onClick={() => setOpenIdx(null)}>
                 {Dropdowns}
               </StyledContainer>

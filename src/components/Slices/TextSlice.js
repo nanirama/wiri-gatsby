@@ -11,8 +11,8 @@ const TextSlice = ({ data }) => {
   // const { text_content } = data
   // console.log('slice text data', text_content)
   return (
-    <Row>
-      <Col lg={12} md={12} sm={12}>
+    <Row center="xs">
+      <Col lg={10} md={12} sm={12}>
         <Bloglist>
         {data && data.text_content &&
         <PrismicRichText

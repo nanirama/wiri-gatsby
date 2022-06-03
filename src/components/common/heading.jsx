@@ -1,5 +1,5 @@
 import React from "react"
-import { up } from "styled-breakpoints"
+import {up, down } from "styled-breakpoints"
 import styled from "styled-components"
 
 const Title = styled.h2`
@@ -65,11 +65,13 @@ const Title = styled.h2`
 `
 const Subtitle = styled.p`
   font-size: 18px;
-  line-height: 22px;
+  line-height: 22px; 
   ${up("sm")} {
     font-size: 36px;
     line-height: 46px;
+   
   }
+ 
   ${up("md")} {
     font-size: 20px;
     line-height: 26px;

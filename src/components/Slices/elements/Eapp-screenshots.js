@@ -47,25 +47,14 @@ const EAppScreenshots = ({ data }) => {
                 },
             },
             {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 2,
-                },
-            },
-            {
-                breakpoint: 440,
+                breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    centerMode: false,
                 },
-            },
-            
-            
+            },          
         ],
     }
-
 
     return (
         <AppSection>
@@ -73,7 +62,7 @@ const EAppScreenshots = ({ data }) => {
                 <Wrapper AppBack={AppBack.childImageSharp.fluid.srcWebp}>
                     <Grid>
                         <TopText>
-                            <Heading>{title} <span className="txt-green">.</span></Heading>
+                            <Heading>{title}<span className="txt-green">.</span></Heading>
                             <p className="subtitle">{subtitle}</p>
                         </TopText>
                         <AppSlider>

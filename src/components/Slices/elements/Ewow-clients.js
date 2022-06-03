@@ -7,12 +7,12 @@ const EWowClients = ({ data }) => {
     const { title, subtitle, benefits, background } = data.primary.wclients.document.data
     return (
         <WowClientsWrapper>
-            <Grid>
+            <Grid fluid>
                 <Row middle="xs">
                     <Col xs={12} lg={6} first="lg" last="xs">
                         <GatsbyImage image={getImage(background)} alt={title} />
                     </Col>
-                    <Col xs={12} lg={6}>
+                    <Col xs={12} lg={6} className="pr-14">
                         <Inner>
                             <Heading>{title}<span className="txt-green">.</span></Heading>
                             <p className="subtitle">{subtitle}</p>

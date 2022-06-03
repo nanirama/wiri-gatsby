@@ -7,17 +7,20 @@ import {up, down } from "styled-breakpoints"
 export const Blogwrapper = styled.div`
 margin-bottom:100px; margin-top:70px;
 h1 {text-align:center;
-    ${down("lg")} {
+    ${up("lg")} {
         font-size: 60px;line-height: 64px;
     }
+    ${down("lg")} {
+        font-size: 50px;line-height: 54px;
+    }
     ${down("md")} {
-        font-size: 46px;line-height: 50px;
+        font-size: 45px;line-height: 50px;
     }
     ${down("sm")} {
         font-size: 32px;line-height: 36px;
     }
 }
-h6{text-align:center; display:inline-block; font-weight:400; width:100%; font-size:27px; color:#868686; text-transform:capitalize;padding:30px 0;
+h6{font-family: 'GelionMedium';text-align:center; display:inline-block; font-weight:400; width:100%; font-size:25px; color:#868686; text-transform:capitalize;padding:30px 0;
 
     ${down("md")} {
         font-size:18px; padding:15px 0 20px 0;
@@ -35,25 +38,34 @@ ${down("sm")} {
 export const Blogimg = styled.div`
 margin-bottom:35px !important;
 img {border-radius:40px; width:100%; }
+${down("sm")} {
+    img {border-radius:20px;}
+}
 `
 
 export const BlogButton = styled.div`
 display:flex; text-align:center; align-items:center;justify-content: center; margin-bottom:25px;
+${down("sm")} {
+    flex-wrap: wrap;
+}
 `
 export const Button = styled.div`
-border:0px;
+border:0px;font-family: 'GelionBold';
 margin:0px 3px;
-padding:0 15px; background-color:#e6f8f3; font-weight:semibold; border-radius:5px; 
- color:#08b689; text-transform:capitalize; font-size:20px; line-height:34px; cursor:pointer; font-weight:700;
+padding:0 15px; background-color:#e6f8f3; border-radius:5px; 
+ color:#08b689; text-transform:capitalize; font-size:20px; line-height:34px; cursor:pointer;
  ${down("sm")} {
-    font-size:16px;
+    font-size:16px;margin-bottom:10px;
  }
 `
 export const Bloglist = styled.div`
-ol {margin:0; padding:0; width:100%;}
+text-align:left;
+ol {margin:0; padding:0; width:100%;counter-reset: item;
+    list-style-type: none;}
 ol li {width:46%; float:left; font-size:22px; padding-left:8px; line-height:50px; position:relative; left:10px;top:10px; color:#303030; margin-left:30px; font-weight:600;
-&:before {position:absolute; content:'';width:30px !important; height:30px !important;font-size:14px !important; left: -34px;top: 9px;
-z-index: -999; border-radius:30px; background-color:#cef0e7 !important;}
+&:before {position:absolute; content:'';width:30px !important; height:30px !important;font-size:18px !important; left: -34px;top: 9px;
+z-index: -999; border-radius:30px; background-color:#cef0e7 !important; content: counter(item) "  "; 
+counter-increment: item; line-height:30px; text-align:center; color:#08b689;}
 ::marker { color:#08b689;}
 ${down("lg")} {
     width:43%;
@@ -91,6 +103,7 @@ ${down("sm")} {
 `
 
 export const Blackquote = styled.div`
+text-align:left;
 margin:60px 0; padding:30px 35px 30px 35px; display:flex; align-items:center; border-radius:10px;
 background-color:#f8faff; background-image: url(${blackquotebg}); background-position:bottom -90px right -125px; background-repeat:no-repeat; 
 ${down("md")} {
@@ -118,6 +131,7 @@ width:90%;
 p {font-style:italic; font-weight:600; padding-bottom:0;}
 `
 export const Imggroup = styled.div`
+text-align:left;
 margin:0px 0 20px 0;
 display:flex;
 justify-content: space-between;
@@ -233,6 +247,7 @@ ${down("md")} {
 `
 
 export const Couldblk = styled.div`
+text-align:left;
 .row{
  
     .col-lg-8, .col-md-6, .col-sm-12{
@@ -249,7 +264,7 @@ h2{
     text-align:center;
     position:relative;
 &:before{
-    content:'';position: absolute;bottom:-15px;left:49%;width:40px;height:5px;background-color:#4478db;border-radius:10px;
+    content:'';position: absolute;bottom:-15px;left:0;right:0; margin:0 auto;width:40px;height:5px;background-color:#4478db;border-radius:10px;
 }
 }
 `

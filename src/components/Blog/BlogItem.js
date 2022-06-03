@@ -10,7 +10,7 @@ const BlogItem = ({ data, lang }) => {
     const url = lang === prismicConfiguration.defaultLanguage ? data.uid : `${lang.slice(0, 2)}/${data.uid}`  
     return (
         <Blogitem>
-            <GatsbyImage image={getImage(article_image)} alt={title.text} />
+            <Link to={`/${url}`}><GatsbyImage image={getImage(article_image)} alt={title.text} /></Link>
             <Blockcontent>
                 <p className="datespan"><span>March 20, 2022</span></p>
                 <Link to={`/${url}`}><h3>{title.text}</h3></Link>

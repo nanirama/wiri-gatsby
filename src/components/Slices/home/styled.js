@@ -57,8 +57,8 @@ position: relative;
         line-height: 66px;
     }
     ${down("md")} {
-        font-size: 55px;
-        line-height: 55px; 
+        font-size: 52px;
+        line-height: 52px; 
         margin-bottom: 20px;       
     }
     ${down("sm")} {
@@ -672,12 +672,12 @@ export const RuleItem = styled.div`
 display: flex;
 align-items: center;
 p {
-  color: "#5f5f5f";
+  color: #5f5f5f;
   font-size: 25px;
   font-weight: 400;
   line-height: 35px;
   letter-spacing: -0.75px;
-  padding:0;margin:0 0 0 10px;    
+  padding:0;margin:0 0 0 10px; 
 }
 ${down("lg")} {
   img, svg{
@@ -686,7 +686,7 @@ ${down("lg")} {
   }
 }
 ${down("md")} {
-p{display:none;}
+p{display:block; font-size: 14px;}
   img, svg {
     width: 40px;
     height: 40px;
@@ -706,8 +706,9 @@ li {
   }
   p {
     ${down("lg")} {
-      font-size:20px;
+      font-size:15px;display:block;
       line-height:30px;
+      
    
     }
   }
