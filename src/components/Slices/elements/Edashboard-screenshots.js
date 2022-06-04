@@ -67,16 +67,7 @@ const EDashboardScreenshots = ({data}) => {
           slidesToScroll: 1,
           infinite: true,
         },
-      },
-      {
-        breakpoint:480,
-        settings: {
-          centerMode: false,
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
+      },      
     ],
   };
 

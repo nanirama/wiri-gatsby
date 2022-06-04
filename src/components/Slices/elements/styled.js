@@ -694,18 +694,19 @@ button { padding: 0 0px !important;}
   }
   @media only screen and (min-width:570px) and (max-width:680px){
     .slick-slid{ width: 230px !important;}
-  }
-  
-  @media only screen and (max-width:570px) {
-    .slick-prev{left:-25px;}
-    .slick-next{right:-30px;}
-  }
-  @media only screen and (min-width:340px) and (max-width:480px){
-    .slick-slid{ width: 230px !important;}
     .slick-slide{display: flex !important;justify-content: center;align-items: center;}
 
   }
-
+ 
+  @media only screen and (max-width:570px) {
+    .slick-prev{left:-25px;}
+    .slick-next{right:-15px;}
+  }
+  @media only screen and (max-width:480px) {
+    .slick-slid{flex-direction:column;
+      label{margin-top:10px;font-size:16px;}
+    }
+  }
   .slick-current .slick-slid{
     background-color: #4478db;
     border-radius: 10px;display: flex !important;
