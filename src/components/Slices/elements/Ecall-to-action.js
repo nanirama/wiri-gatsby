@@ -2,10 +2,6 @@ import React from "react"
 import { Grid } from 'react-flexbox-grid';
 import { useStaticQuery, graphql } from "gatsby"
 import { CallSection, Heading } from "./styled"
-
-
-
-
 const ECallToAction = ({ data }) => {
   const { CtaBack } = useStaticQuery(graphql`
     query {
@@ -18,7 +14,7 @@ const ECallToAction = ({ data }) => {
       }
     }
   `)
-    const { cta_heading, cta_content, cta_subheading, button_link, button_label } = data.primary.cta.document.data
+    const { cta_heading, cta_subheading, button_label } = data.primary.cta.document.data
   return (
     <Grid fluid>
       <CallSection CtaBack={CtaBack.childImageSharp.fixed.srcWebp}>

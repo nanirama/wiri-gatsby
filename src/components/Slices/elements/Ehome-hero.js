@@ -64,12 +64,6 @@ const EHomeHero = ({data})=>{
                       image={getImage(qr_image)}
                       alt="qr img"
                     />
-                    {/* <StaticImage src="../../../assets/images/hero-img.png" alt="" className="hero-img" />
-                    <StaticImage src="../../../assets/images/rating.png" alt="" className="float review-img" />
-                    <StaticImage src="../../../assets/images/menu.png" alt="" className="float menu-img" />
-                    <StaticImage src="../../../assets/images/deals.png" alt="" className="float deals-img" />
-                    <StaticImage src="../../../assets/images/question.png" alt="" className="float question-img" />
-                    <StaticImage src="../../../assets/images/qr-code.png" alt="" className="qr-img" /> */}
                   </HeroImage>
                 </Col>
               </Row>

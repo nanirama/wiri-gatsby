@@ -1,12 +1,12 @@
 import React, { useRef } from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid } from 'react-flexbox-grid';
 import Slider from "react-slick"
 import { SlickArrows } from "../../styled/lib"
 import { LeftArrow, RightArrow } from "../../../utils/imgImport";
 import { useStaticQuery, graphql } from "gatsby"
 
-import { AppSection, Wrapper, TopText, Heading, AppImages, AppSlider, AppSlide } from "./styled"
+import { AppSection, Wrapper, TopText, Heading, AppSlider, AppSlide } from "./styled"
 
 const EAppScreenshots = ({ data }) => {
     const { AppBack } = useStaticQuery(graphql`
@@ -52,10 +52,9 @@ const EAppScreenshots = ({ data }) => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 },
-            },          
+            },
         ],
     }
-
     return (
         <AppSection>
             <Grid fluid>
