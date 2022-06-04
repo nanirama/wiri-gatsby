@@ -81,7 +81,10 @@ const GlobalStyle = createGlobalStyle`
 	font-style: normal;
 	font-display: swap;
 }
-
+.container {
+	content-visibility: auto;
+	contain-intrinsic-size: 500px;
+  }
 body{margin:auto; float:none; font-family: 'GelionRegular',sans-serif !important; sans-serif !important;font-weight: 400; color:#3C3C3B;}
 a{ text-decoration:none; font-size:22px;}
 img{ width:100%;height:auto;}
