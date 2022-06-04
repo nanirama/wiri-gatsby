@@ -62,6 +62,7 @@ const EDashboardScreenshots = ({data}) => {
       {
         breakpoint:680,
         settings: {
+          centerMode: false,
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
@@ -70,7 +71,8 @@ const EDashboardScreenshots = ({data}) => {
       {
         breakpoint:480,
         settings: {
-          slidesToShow: 1,
+          centerMode: false,
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
         },
