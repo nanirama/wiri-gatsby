@@ -28,25 +28,35 @@ const EDashboardScreenshots = ({data}) => {
     slidesToScroll: 1,
     arrows: true,
     swipeToSlide: true,
-    asNavFor: '.slider-nav'
+    asNavFor: '.slider-nav',
+    responsive: [ 
+      {
+        breakpoint:1023,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
 
   const settingsThumbs = {
     slidesToShow: 4,
     slidesToScroll: 1,
     asNavFor: '.slider-for',
+    infinite: false,
     dots: false,
-    arrows: false,
+    arrows: true,
     centerMode: true,
     swipeToSlide: true,
     focusOnSelect: true,
     centerPadding: '10px',
     responsive: [ 
       {
-        breakpoint:991,
+        breakpoint:1023,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          infinite: true,
         },
       },     
       {
@@ -54,13 +64,15 @@ const EDashboardScreenshots = ({data}) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
       {
-        breakpoint:470,
+        breakpoint:480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
         },
       },
     ],
@@ -69,13 +81,7 @@ const EDashboardScreenshots = ({data}) => {
 
 
   const { title, subtitle, screenshots } = data.primary.dashboard_screenshot.document.data
-  const slider = useRef()
-  const next = () => {
-    slider.current.slickNext()
-  }
-  const previous = () => {
-    slider.current.slickPrev()
-  }
+
   // const settings = {
   //   speed: 500,
   //   slidesToShow: 1,
@@ -104,10 +110,6 @@ const EDashboardScreenshots = ({data}) => {
   //       },
   //     },
   //   ],
-
-
-
-
 
     
   //   customPaging: function(i) {
@@ -155,7 +157,7 @@ const EDashboardScreenshots = ({data}) => {
 
 <div className="slider-wrapper">
 
-<Slider
+<Slider className="dashboard-slider"
     {...settingsMain}
     asNavFor={nav2}
     ref={slider => (setSlider1(slider))}>
