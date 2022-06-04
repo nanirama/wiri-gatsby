@@ -32,7 +32,6 @@ const ImgSlice = ({ data }) => {
             image_heading {
               text
               richText
-              raw
               html
             }
             block_image {
