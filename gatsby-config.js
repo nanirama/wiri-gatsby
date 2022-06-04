@@ -13,7 +13,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    "gatsby-plugin-loadable-components-ssr",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
