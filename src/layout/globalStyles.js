@@ -81,10 +81,10 @@ const GlobalStyle = createGlobalStyle`
 	font-style: normal;
 	font-display: swap;
 }
-// .container {
-// 	content-visibility: auto;
-// 	contain-intrinsic-size: 500px;
-//   }
+.container {
+	content-visibility: auto;
+	contain-intrinsic-size: 500px;
+  }
 body{margin:auto; float:none; font-family: 'GelionRegular',sans-serif !important; sans-serif !important;font-weight: 400; color:#3C3C3B;}
 a{ text-decoration:none; font-size:22px;}
 img{ width:100%;height:auto;}
@@ -224,6 +224,8 @@ cursor:pointer;
 	height: 17px;
   }
   @media (min-width: 1441px) {
+	height: 21px;
+	border-radius: 5px;
 	bottom: 15px;
   }
 }
@@ -258,13 +260,11 @@ margin-bottom: 0;
 }
 
 
-@media (min-width: 1400px) {
-	.container-fluid {max-width:1330px;margin:0 auto;}
+@media (min-width: 1600px) {
+	.container-fluid {max-width:1400px;margin:0 auto;}
 }
-@media only screen and (min-width:1100px) and (max-width:1199px){
-		.container{ width:96%;padding:0 16px;}
-}
-@media (max-width: 1099px) {
+
+@media (max-width: 991px) {
 	.container{ width:100%;padding:0 16px;}
 }
 @media (max-width: 991px) {

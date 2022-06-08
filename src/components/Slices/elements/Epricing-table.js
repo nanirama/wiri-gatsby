@@ -12,38 +12,20 @@ import { PricingSection, TopText, Heading, Plan, Button, Tag, PricingSlider, Pri
 
 const settings = {
    speed: 500,
-   slidesToShow: 3,
+   slidesToShow: 2,
    slidesToScroll: 1,
-   arrows: false,
+   arrows: true,
    dots: false,
-   centerMode: false,
+   centerMode: true,
    responsive: [
       {
-         breakpoint: 992.98,
+         breakpoint: 800,
          settings: {
-             slidesToShow: 2,
-             slidesToScroll: 1,
-             arrows: true,
-             centerMode: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
          },
       },
-      {
-         breakpoint: 700,
-         settings: {
-             slidesToShow: 1,
-             slidesToScroll: 1,
-             centerMode: true,
-         },         
-     },
-     {
-      breakpoint: 479,
-      settings: {
-         slidesToShow: 1,
-             slidesToScroll: 1,
-          centerMode: false,
-      },         
-  },
-
 
    ],
 }
@@ -110,10 +92,9 @@ srcWebp
                   >{year_label}</Button>
                   <Tag>{save_label.text}</Tag>
                </Plan>
-             
-                  <PricingSlider PricingBack2={PricingBack2.childImageSharp.fixed.srcWebp}>
-                  <Slider {...settings} ref={c => (slider.current = c)}>
-                   
+               <BrowserView>
+                  <PricingSlider className="desktop-pricing" PricingBack2={PricingBack2.childImageSharp.fixed.srcWebp}>
+                     <Row>
                         {body && body.map((pricing, index) => {
                            const { button_label,
                               featured,
@@ -122,8 +103,7 @@ srcWebp
                               per_month,
                               per_year } = pricing.primary
                            return (
-                              <Row>
-                              <Col xs={12} md={12} key={index}>
+                              <Col xs={12} md={4} key={index}>
                                  <PricingSlide className={index == 1 && 'green'}>
                                     <Header>
                                        <p className="price">
@@ -162,14 +142,12 @@ srcWebp
                                     </Body>
                                  </PricingSlide>
                               </Col>
-                              </Row>
                            )
                         })}
-                     
-                     </Slider>
+                     </Row>
                   </PricingSlider>
-                  
-               {/* <MobileView>
+               </BrowserView>
+               <MobileView>
                   <PricingSlider className="mobile-pricing" PricingBack2={PricingBack2.childImageSharp.fixed.srcWebp}>
                      <Slider {...settings} ref={c => (slider.current = c)}>
                         {body && body.map((pricing, index) => {
@@ -233,17 +211,7 @@ srcWebp
                         </button>
                      </SlickArrows>
                   </PricingSlider>
-               </MobileView> */}
-
-
-<SlickArrows className="pricing-arrows">
-                        <button onClick={previous}>
-                           <LeftArrow />
-                        </button>
-                        <button onClick={next}>
-                           <RightArrow />
-                        </button>
-                     </SlickArrows>
+               </MobileView>
             </Grid>
          </PricingSection>
       </Grid>

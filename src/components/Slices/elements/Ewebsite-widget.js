@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useRef } from "react"
+import { BrowserView, MobileView } from 'react-device-detect';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import SVG from "react-inlinesvg"
@@ -64,6 +65,7 @@ const EWebsiteWidget = ({ data }) => {
         <Title>
           <span className="blue-line">{title}</span><span className="txt-green">.</span>
         </Title>
+        <BrowserView>
           <DesktopWidget>
             <Row>
               <Col xs={12} md={4}>
@@ -107,6 +109,8 @@ const EWebsiteWidget = ({ data }) => {
               </Col>
             </Row>
           </DesktopWidget>
+        </BrowserView>
+        <MobileView>
           <MobileWidget>
             <Slider
               className="widget-slider"
@@ -138,6 +142,7 @@ const EWebsiteWidget = ({ data }) => {
               </button>
             </SlickArrows>
           </MobileWidget>
+        </MobileView>
       </Grid>
     </WidgetSection>
   )

@@ -37,7 +37,7 @@ const EDashboardScreenshots = ({ data }) => {
   };
 
   const settingsThumbs = {
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     asNavFor: '.slider-for',
     infinite: false,

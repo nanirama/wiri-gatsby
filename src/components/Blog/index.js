@@ -95,7 +95,7 @@ margin-bottom:20px;
 `
 const Blogtop = styled.div`
 display:flex; align-items:center; justify-content:center; text-align:center; margin-top:50px;
-h1 {font-size:45px; line-height:50px; text-transform:capitalize; padding-bottom:20px;
+h1 {font-size:50px; line-height:55px; text-transform:capitalize; padding-bottom:20px;
   ${up("sm")} {
     font-size:70px; line-height:70px;
   }

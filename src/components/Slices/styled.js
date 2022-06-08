@@ -192,17 +192,17 @@ p{padding:0;}
 `
 export const Blogimg1 = styled.div`
 position: relative;margin-bottom:30px;
-// &:before{
-//     content:'';position: absolute;
-//     bottom: -20px;
-// right: -5px;
-// width: 99px;
-// height: 99px;
-// z-index:10;
-//     background-image:url(${blackquotebg2});
-//     background-position:right center;
-//     background-repeat:no-repeat;
-// }
+&:before{
+    content:'';position: absolute;
+    bottom: -20px;
+right: -5px;
+width: 99px;
+height: 99px;
+z-index:10;
+    background-image:url(${blackquotebg2});
+    background-position:right center;
+    background-repeat:no-repeat;
+}
 ${up("md")} {
     width:48%;
     margin-bottom:0px;
