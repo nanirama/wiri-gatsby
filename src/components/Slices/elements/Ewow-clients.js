@@ -10,7 +10,7 @@ const EWowClients = ({ data }) => {
             <Grid fluid>
                 <Row middle="xs">
                     <Col xs={12} lg={6} first="lg" last="xs">
-                        <GatsbyImage image={getImage(background)} alt={title} />
+                        <GatsbyImage image={getImage(background)} alt={title} width={903} height={769} />
                     </Col>
                     <Col xs={12} lg={6} className="pr-14">
                         <Inner>
