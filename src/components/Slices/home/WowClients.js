@@ -18,7 +18,7 @@ export const query = graphql`
               id
               data {
                 background {
-                    gatsbyImageData(layout: FULL_WIDTH)
+                    gatsbyImageData(layout: CONSTRAINED, width: 903, height: 769)
                 }
                 subtitle
                 title
