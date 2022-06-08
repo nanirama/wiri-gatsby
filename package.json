@@ -30,7 +30,7 @@
     "react": "^17.0.1",
     "react-device-detect": "^2.2.2",
     "react-dom": "^17.0.1",
-    "react-flexbox-grid": "^2.1.2",
+    "react-flexbox-grid": "^2.1.1",
     "react-helmet": "^6.1.0",
     "react-inlinesvg": "^3.0.0",
     "react-select": "^5.3.2",
