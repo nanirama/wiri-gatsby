@@ -9,7 +9,7 @@
     "@prismicio/react": "^2.3.0",
     "babel-plugin-styled-components": "^2.0.7",
     "dotenv": "^16.0.1",
-    "gatsby": "^4.13.0",
+    "gatsby": "^4.9.3",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-gatsby-cloud": "^4.13.0",
     "gatsby-plugin-image": "^2.14.1",
