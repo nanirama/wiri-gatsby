@@ -4,10 +4,14 @@ import {up, down } from "styled-breakpoints"
 import CTABack from "../../assets/images/cta-back.png"
 export const FeaturedBlogitem = styled.div`
 height:100%;
-overflow:hidden;
-position:relative;
+// overflow:hidden;
+// position:relative;
 margin:0px 10px 0px 10px;  
-img{border-radius: 15px 15px 0 0 ; padding:0px; z-index:0;}
+img{border-radius: 15px 0px 0 15px ; padding:0px; z-index:0;
+    @media (max-width: 991px) {
+        border-radius: 15px 15px 0 0px ;
+    }
+}
 padding:0px !important;
 border-radius: 15px 15px 15px 15px ;
 box-shadow: 20px 0px 73px rgba(58, 70, 100, 0.07) ;
@@ -22,8 +26,19 @@ box-shadow: 20px 0px 73px rgba(58, 70, 100, 0.07) ;
  span {font-size:17px; line-height:35px; color:#868686;}
 
  }
+
+
+ .row{height:100%;}
+ @media (min-width: 992px) {
+ .pl-0{padding-left:0;}
+ .pr-0{padding-right:0;}
+ }
 `;
 
+
+export const FeaturedImage = styled.div`
+
+`
 export const Blogitem = styled.div`
 
 overflow:hidden;
@@ -55,15 +70,17 @@ h3 {letter-spacing:-.3px; line-height:26px; font-size:23px; padding:3px 0px; mar
 p.datespan{ line-height:14px; padding:2px 0px; margin:2px 0px; }
 p span{ padding:0px; margin:0px; line-height:14px; }
 p{ padding:2px 0px; margin:2px 0px;line-height:22px; }
-
+${down("md")} {
+    padding:15px;
+}
 `
 export const FeaturedBlockcontentInner = styled.div`
-padding:20px;
+padding:15px;
 h3 {letter-spacing:-.3px; line-height:28px; }
 p.datespan{ line-height:14px; padding:8px 0px; margin:6px 0px; }
 p span{ padding:0px; margin:0px; line-height:14px; }
 p{ padding:8px 0px; margin:8px 0px;line-height:22px; }
-${up("sm")} {
+${up("md")} {
     padding:30px;
 }
 `
@@ -71,15 +88,20 @@ export const FeaturedBlockcontent = styled.div`
 background-color:#f0fbf8;
 display:flex;
 align-items: center;
-
-${up("md")} {
-position:absolute;
-width:51%;
-top:0px;
-right:0px;
+border-radius: 0px 15px 15px 0;
 height:100%;
-
+@media (max-width: 991px) {
+    border-radius: 0px 0px 15px 15px;
 }
+
+// ${up("md")} {
+// position:absolute;
+// width:51%;
+// top:0px;
+// right:0px;
+// height:100%;
+
+// }
 `
 export const Blogsvg = styled.div`
 display:flex;align-items: center; margin:6px 0px 0px 0px;

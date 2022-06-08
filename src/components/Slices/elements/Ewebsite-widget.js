@@ -65,7 +65,6 @@ const EWebsiteWidget = ({ data }) => {
         <Title>
           <span className="blue-line">{title}</span><span className="txt-green">.</span>
         </Title>
-        <BrowserView>
           <DesktopWidget>
             <Row>
               <Col xs={12} md={4}>
@@ -109,8 +108,6 @@ const EWebsiteWidget = ({ data }) => {
               </Col>
             </Row>
           </DesktopWidget>
-        </BrowserView>
-        <MobileView>
           <MobileWidget>
             <Slider
               className="widget-slider"
@@ -142,7 +139,6 @@ const EWebsiteWidget = ({ data }) => {
               </button>
             </SlickArrows>
           </MobileWidget>
-        </MobileView>
       </Grid>
     </WidgetSection>
   )
