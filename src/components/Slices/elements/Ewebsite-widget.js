@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect, useRef } from "react"
-import { BrowserView, MobileView } from 'react-device-detect';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import SVG from "react-inlinesvg"
