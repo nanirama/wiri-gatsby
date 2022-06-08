@@ -16,9 +16,6 @@ const BlogListTemplate = (props) => {
   const blogs = allPrismicBlog.edges.map((blog) => blog.node);
 
   
-
-
-
   if (!blogs) return null;
   if (!data) return null
   const activeDocMeta = data.prismicBloglistingpage
@@ -126,6 +123,9 @@ export const data = graphql`
               }
               article_image {
                 gatsbyImageData(layout: FULL_WIDTH)
+              }
+              firstImage: article_image {
+                gatsbyImageData(layout: CONSTRAINED, width: 500, height: 550)
               }
             }
           }

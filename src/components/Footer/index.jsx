@@ -185,7 +185,7 @@ const Footer = (props) => {
           <Row>
           <Col xs={12} lg={5}>
               <Wiri>
-                <img src={Logo2} alt="logo" className="logo" />
+              <Link to="/"> <img src={Logo2} alt="logo" className="logo" /></Link>
                 <Socials className="d-flex align-items-center">
                   {footerData.socials.map((item, idx) => (
                     <Social href={item.to} key={idx}>

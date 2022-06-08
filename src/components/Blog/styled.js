@@ -2,14 +2,16 @@ import styled from "styled-components";
 import {up, down } from "styled-breakpoints"
 
 import CTABack from "../../assets/images/cta-back.png"
+
 export const FeaturedBlogitem = styled.div`
 height:100%;
 // overflow:hidden;
 // position:relative;
 margin:0px 10px 0px 10px;  
 img{border-radius: 15px 0px 0 15px ; padding:0px; z-index:0;
-    @media (max-width: 991px) {
-        border-radius: 15px 15px 0 0px ;
+    @media (max-width: 767px) {
+        border-radius: 15px 15px 0 0px;
+        margin:0;
     }
 }
 padding:0px !important;
@@ -22,22 +24,25 @@ box-shadow: 20px 0px 73px rgba(58, 70, 100, 0.07) ;
     border-radius: 15px 15px 15px 15px ; color:#4478db;
 
 }
- p { padding-bottom:15px;
+p {padding-bottom:15px;
  span {font-size:17px; line-height:35px; color:#868686;}
-
- }
-
+}
 
  .row{height:100%;}
- @media (min-width: 992px) {
- .pl-0{padding-left:0;}
- .pr-0{padding-right:0;}
+ .pl-0{padding-left:0; padding-right:8px !important;margin:0 !important}
+ .pr-0{padding-right:0;padding-left:8px !important;margin:0 !important;}
+ 
+ @media (max-width: 767px) {
+    .pl-0, .pr-0{ padding:0 8px !important;}
  }
+
 `;
 
 
 export const FeaturedImage = styled.div`
-
+.gatsby-image-wrapper{
+    width:100%;
+}
 `
 export const Blogitem = styled.div`
 
@@ -90,7 +95,7 @@ display:flex;
 align-items: center;
 border-radius: 0px 15px 15px 0;
 height:100%;
-@media (max-width: 991px) {
+@media (max-width: 767px) {
     border-radius: 0px 0px 15px 15px;
 }
 

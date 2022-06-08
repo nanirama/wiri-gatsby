@@ -8,17 +8,18 @@ import prismicConfiguration from "../../../prismic-configuration";
 import { FeaturedBlogitem, FeaturedImage, Blockcontent, Blogsvg, FeaturedBlockcontent, FeaturedBlockcontentInner } from "../Blog/styled";
 
 const FeaturedBlogItem = ({ data, lang }) => {
-    const { title, excerpt, article_image, firtImage } = data.data
+    const { title, excerpt, article_image, firstImage } = data.data
+
     const url = lang === prismicConfiguration.defaultLanguage ? data.uid : `${lang.slice(0, 2)}/${data.uid}`  
     return (
         <FeaturedBlogitem>
 <Row>
-    <Col xs={12} lg={6} className="pr-0">
+    <Col xs={12} md={6} className="pr-0">
         <FeaturedImage>
-    <Link to={`/${url}`}><GatsbyImage image={getImage(firtImage)} alt={title.text} /></Link>
+    <Link to={`/${url}`}><GatsbyImage image={getImage(firstImage)} alt={title.text} /></Link>
     </FeaturedImage>
         </Col>
-        <Col xs={12} lg={6} className="pl-0">
+        <Col xs={12} md={6} className="pl-0">
         <FeaturedBlockcontent>
                 <FeaturedBlockcontentInner>
                 <p className="datespan"><span>March 20, 2022</span></p>
@@ -74,9 +75,9 @@ export const query = graphql`
         article_image {
             gatsbyImageData(layout: FULL_WIDTH)
         }
-        firtImage : article_image {
+        firstImage: article_image {
             gatsbyImageData(layout: CONSTRAINED, width: 500, height: 550)
-        }
+          }
     }
   }
 `

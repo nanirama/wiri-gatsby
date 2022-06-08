@@ -126,7 +126,7 @@ export const data = graphql`
               article_image {
                 gatsbyImageData(layout: FULL_WIDTH)
               }
-              firtImage : article_image {
+              firstImage: article_image {
                 gatsbyImageData(layout: CONSTRAINED, width: 500, height: 550)
               }
             }
