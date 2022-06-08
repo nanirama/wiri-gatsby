@@ -103,6 +103,9 @@ export const query = graphql`
           article_image {
             gatsbyImageData(layout: FULL_WIDTH)
           }
+          firtImage : article_image {
+            gatsbyImageData(layout: CONSTRAINED, width: 500, height: 550)
+          }
           category1 {
             blog_category {
               document {
