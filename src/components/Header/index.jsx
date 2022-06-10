@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"
 import { Link, useStaticQuery, graphql, navigate } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Select, { components } from "react-select"
+// import Select, { components } from "react-select"
 import Seo from "../seo"
 import { linkResolver } from "../../utils/linkResolver"
 import { handleLangContent } from "../../utils/handleLangContent"
 import SVG from "react-inlinesvg"
 
-import {Navbar, LogoandLinks, Nav, StyledBurger, Ul, LangSwitcher, MobileBtn, DesktopBtn} from "./styled"
+import {Navbar, LogoandLinks, Nav, StyledBurger, Ul, LangSwitcher, MobileBtn, DesktopBtn, DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem} from "./styled"
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 
@@ -69,7 +69,7 @@ const Header = (props) => {
   console.log("navData", navData)
   */
 
-  
+  console.log('headerData.languages',headerData.languages)
 
   const currentLanguage = headerData.languages.filter(function (lang) {
     return lang.value === props.activeDocMeta.lang
@@ -85,6 +85,7 @@ const Header = (props) => {
 
 
   const handleLang = selected => {
+    console.log('selected', selected)
     setLanguage(selected)
 
     const targetLangDoc = props.activeDocMeta.alternate_languages.filter(
@@ -93,7 +94,7 @@ const Header = (props) => {
       }
     )
 
-    console.log("handleLang", targetLangDoc)
+    console.log("handleLang", language)
 
     if(targetLangDoc.length > 0) {
       navigate(linkResolver(targetLangDoc[0]))
@@ -122,29 +123,44 @@ const Header = (props) => {
     navMenuClsName += "active"
   }
 
-  const SingleValue = ({ children, ...props }) => (
-    <components.SingleValue {...props}>
-      <SVG
-        className="language-single"
-        src={props.data.icon.url}
-        height={28}
-        width={28}
-        title={props.data.label}
-      />
-    </components.SingleValue>
-  )
-  const Option = props => (
-    <components.Option {...props}>
-      <SVG
-        className="language-option"
-        src={props.data.icon.url}
-        height={18}
-        width={18}
-        title={props.data.label}
-      />
-      {props.data.label}
-    </components.Option>
-  )
+  // const SingleValue = ({ children, ...props }) => {
+  //   return(
+  //   <components.SingleValue {...props}>
+  //     <SVG
+  //       className="language-single"
+  //       src={props.data.icon.url}
+  //       height={28}
+  //       width={28}
+  //       title={props.data.label}
+  //     />
+  //   </components.SingleValue>
+  // )
+  // }
+  // const Option = props => (
+  //   <components.Option {...props}>
+  //     <SVG
+  //       className="language-option"
+  //       src={props.data.icon.url}
+  //       height={18}
+  //       width={18}
+  //       title={props.data.label}
+  //     />
+  //     {props.data.label}
+  //   </components.Option>
+  // )
+
+  
+const [isOpen, setIsOpen] = useState(false);
+
+const toggling = () => setIsOpen(!isOpen);
+
+const onOptionClicked = value => () => {
+  setIsOpen(false);
+  handleLang(value);
+};
+
+
+
   return (
     <>
     {props.activeDocMeta.data && props.activeDocMeta.data.body1[0] && (
@@ -197,27 +213,30 @@ const Header = (props) => {
            </Nav>
 
 
-            {/* <Nav>
-            <ul className={navMenuClsName}>
-              {headerData.links.map((item, idx) => (
-                <li className="nav-item" key={idx}>
-                  <Link
-                    className="nav-link"
-                    activeClassName="active"
-                    to={linkResolver({
-                      type: item.link.type,
-                      uid: item.link.uid,
-                      lang: props.activeDocMeta.lang,
-                    })}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            </Nav> */}
 
-            <LangSwitcher>
+<DropDownContainer>
+        <DropDownHeader onClick={toggling}>
+          {language ? <span className={`flag active ${language.label.toLowerCase()}`} /> : <span className="flag active english"/>}
+        </DropDownHeader>
+        {isOpen && (
+          <DropDownListContainer>          
+
+            <DropDownList>
+         
+            {headerData.languages.map(option => (
+                <ListItem onClick={onOptionClicked(option)} key={Math.random()}>
+                  <span className={`flag ${option.label.toLowerCase()}`} />
+                 {option.label}              
+                </ListItem>
+                
+               ))}
+            </DropDownList>
+
+          </DropDownListContainer>
+        )}
+      </DropDownContainer>
+
+            {/* <LangSwitcher>
               <Select
                 isSearchable={false}
                 value={language}
@@ -284,24 +303,12 @@ const Header = (props) => {
                   },
                 }}
               />
-            </LangSwitcher>
+            </LangSwitcher> */}
             <DesktopBtn>
             <Link className="get-started btn-green" to="/">
               {headerData.button_label}
             </Link>
             </DesktopBtn>
-            {/* <div className={humbugerClsName}
-              onClick={hamburgerHandler}
-              onKeyDown={hamburgerHandler}
-              role="button"
-              tabIndex="0"
-            >
-              <HamburgerInner>
-                <span></span>
-                <span></span>
-                <span></span>
-              </HamburgerInner>
-            </div> */}
             </LogoandLinks>
           </Grid>
         </Navbar>

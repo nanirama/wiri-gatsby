@@ -37,16 +37,15 @@ const EDashboardScreenshots = ({ data }) => {
   };
 
   const settingsThumbs = {
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     asNavFor: '.slider-for',
     infinite: false,
     dots: false,
     arrows: true,
-    centerMode: true,
+    centerMode: false,
     swipeToSlide: true,
     focusOnSelect: true,
-    centerPadding: '10px',
     responsive: [
       {
         breakpoint: 1023,
